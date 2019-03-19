@@ -1,0 +1,107 @@
+commit 058b7d15f336c41d8dafdd1d6a7de281380aba71
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 15:56:09 2019 +0200
+
+    file1 poisto ja file 2 uudelleennimeäminen
+
+ tiedostoja/.file.swp                 | Bin 0 -> 1024 bytes
+ tiedostoja/file2.txt                 |   0
+ tiedostoja/{file1.txt => file22.txt} |   0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3a09b20180bcff900fa09a5b797441fa876ea2bf
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 15:40:10 2019 +0200
+
+    kolmen tiedoston luonti
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 83002833b6f4a2171119e542bf91791e11da8d35
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 14:07:58 2019 +0200
+
+    lisää rivejä
+
+ eka.txt    | 3 +--
+ kolmas.txt | 3 +++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 1e4857f75a19f981cd1d124b6d88201a54dfd73c
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 14:04:50 2019 +0200
+
+    tiedostonimen vaihto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6a509debdef9765b49999d8c28604e3ac458d525
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 13:58:42 2019 +0200
+
+    asdllkjgr poistomuutos
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 856b37f962e208096d072faee4ddc4c9273654cd
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 13:54:50 2019 +0200
+
+    hieno muutos kaavaan
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit e49346b3badbaea3c61dcbe9879c81c6d60f4aa3
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 13:51:05 2019 +0200
+
+    algebraa
+
+ tiedosto.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+commit 4e305be64d5da4d450c327f61b771e824b47f0ad
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 13:42:53 2019 +0200
+
+    lisaa lisayksia
+
+ kolmas.txt    | 1 +
+ stuff/asd.txt | 0
+ toinen.txt    | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit 2522ee4dde1805e45c0cee945f6cd20ed86edc4f
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Tue Mar 19 13:36:29 2019 +0200
+
+    lisätään kolmas tiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 643561747bdb6fb91086ed542e89f65d983043be
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Mon Mar 18 17:19:01 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 3a2c1bfbc95850059b3a78ca784ae009b51d5dcc
+Author: Tuomas Kelomäki <tuomas.kelomaki@gmail.com>
+Date:   Mon Mar 18 17:14:22 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
