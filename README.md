@@ -1,4 +1,6 @@
 # Viikko 2
+Linkki alustavaan määrittelydokumenttiin on tässä.
+
 
 # Viikko 1
 
