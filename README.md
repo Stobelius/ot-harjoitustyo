@@ -1,5 +1,5 @@
 # Viikko 2
-Linkki alustavaan määrittelydokumenttiin on tässä.
+Linkki alustavaan määrittelydokumenttiin tulee tähän.
 
 
 # Viikko 1
