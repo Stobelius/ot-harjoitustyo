@@ -13,4 +13,4 @@ Sovelluksessa yritetään saada ensin perusasiat kondikseen. Tämän jälkeen si
 - lisää atribuutteja peleistä, esim genre
 - monta käyttäjää voisivat tallentaa eri pelikokoelmiaan
 
-Tavoitteet ei ole projektin suhteen mitenkään liian korkealla. Kuitenkin homma kiinnostaa jonkun verran.
+
