@@ -1,5 +1,5 @@
 # Viikko 2
-Linkki alustavaan määrittelydokumenttiin tulee tähän.
+Linkki alustavaan määrittelydokumenttiin tulee [tähän](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko2/Alustava_maarittelydokumentti.md).
 
 
 # Viikko 1
