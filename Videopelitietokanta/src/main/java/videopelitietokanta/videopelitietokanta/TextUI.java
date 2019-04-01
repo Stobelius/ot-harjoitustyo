@@ -27,6 +27,9 @@ public class TextUI {
 
             if (input.equals("1")) {
                 System.out.println("nyt syötetään peli");
+                
+                
+                
             } else if (input.equals("2")) {
                 System.out.println("nyt tulostetaan pelejä");
             } else if (input.equals("q")) {
