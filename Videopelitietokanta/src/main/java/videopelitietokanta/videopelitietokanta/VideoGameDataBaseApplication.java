@@ -14,8 +14,8 @@ package videopelitietokanta.videopelitietokanta;
 public class VideoGameDataBaseApplication {
     
     public static void main(String[] args){
-            TextUI kalle=new TextUI();
-            kalle.start();
+            TextUI textUI=new TextUI();
+            textUI.start();
     }
     
 
