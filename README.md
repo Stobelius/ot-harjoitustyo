@@ -1,12 +1,10 @@
-# Viikko 2
-Linkki alustavaan määrittelydokumenttiin tulee [tähän](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko2/Alustava_maarittelydokumentti.md).
+# Videopelitietokanta
+Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetään kirjaa ja luodaan tilastoja.
+
+## Dokumentaatio
+[Määrittelydokumentti](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko2/Alustava_maarittelydokumentti.md).
+[Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/tyoaikakirjanpito.md)
 
 
-# Viikko 1
-
-Tässä on hienoa tekstiä, jossa on **lihavointia** ja *kursivointia*.
-
-Tässä on linkki harjoitukseen [komentorivi.txt](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)  ja linkki [gitlog.txt:hen](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt).
-
-# Työaikakirjanpito
-[Linkki](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/tyoaikakirjanpito.md)
+## Komentorivitoiminnot
+Testit suoritetaan komennolla: mvn test
