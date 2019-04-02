@@ -22,6 +22,19 @@ public class VideoGame {
         this.completed = false;
     }
     
+    public String asFileString(){
+        return name+";"+console+";"+publicationYear+";"+completed+"&";
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return name+" "+console+" "+publicationYear+" "; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
     public void complete(){
         this.completed=true;
     }
