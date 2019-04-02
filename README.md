@@ -8,4 +8,10 @@ T채h채n sovellukseen voin tallentaa oman videopelikokoelmani. Peleist채 pidet채�
 
 
 ## Komentorivitoiminnot
-Testit suoritetaan komennolla: mvn test
+Testit suoritetaan komennolla: `mvn test`
+
+Testikattavuus ei toiminut laitoksen koneella komennolla 
+``
+mvn test jacoco:report
+``
+sill채 tuli joku NoPluginFoundForPrefixException virhe, mit채 en ymm채rt채nyt.
