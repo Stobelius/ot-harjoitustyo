@@ -43,21 +43,21 @@ public class VideoGamesTest {
     @Test
     public void saveOneGame() {
         VideoGame mario = new VideoGame("mario", "nes", 1985);
-        String testFile = "testfile.txt";
-        FileDao fileDao = new FileDao(testFile);
-        fileDao.create(mario);
-        
-        String written="";
+        FileDao fileDao = new FileDao();
+        fileDao.add(mario);
 
-        try (Scanner reader = new Scanner(new File(testFile))) {
-            written=reader.nextLine();
+        String written = "";
 
+        try (Scanner reader = new Scanner(new File("games.txt"))) {
+            while (reader.hasNextLine()) {
+                written = reader.nextLine();
+            }
 
         } catch (Exception e) {
             System.out.println("Not managing to read file in test" + e.getMessage());
         }
-        
-        assertEquals(written, mario.asFileString());
+
+        assertEquals(mario.asFileString(), written);
 
     }
 

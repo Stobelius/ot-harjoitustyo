@@ -23,7 +23,8 @@ public class VideoGame {
     }
     
     public String asFileString(){
-        return name+";"+console+";"+publicationYear+";"+completed+"&";
+        return name+";"+console+";"+publicationYear+";"+completed;
+                
     }
     
     

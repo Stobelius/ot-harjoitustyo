@@ -14,10 +14,10 @@ import java.util.List;
  * @author stobe
  */
 public interface Dao {
-    void create(VideoGame game);
+    void add(VideoGame game);
     List<VideoGame> list();
 
     
-    
+//    
     
 }
