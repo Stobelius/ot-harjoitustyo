@@ -1,7 +1,7 @@
 package videopelitietokanta.videopelitietokanta;
 
 import java.util.List;
-import domain.VideoGame;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +12,7 @@ import domain.VideoGame;
  *
  * @author stobe
  */
+
 public interface Dao {
 
     void add(VideoGame game);

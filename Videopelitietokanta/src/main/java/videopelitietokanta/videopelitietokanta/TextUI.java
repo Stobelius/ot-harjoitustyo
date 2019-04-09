@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package videopelitietokanta.videopelitietokanta;
 
-import videopelitietokanta.videopelitietokanta.FileDao;
+
 import java.util.Scanner;
 
 /**
