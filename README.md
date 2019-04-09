@@ -13,6 +13,8 @@ Tosiaan pakkauksiin jako on nyt kesken, mutta aion sen tehdä seuraavalla tavall
 
 [Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/tyoaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
+
 
 ## Komentorivitoiminnot
 Testit suoritetaan komennolla: `mvn test`
