@@ -13,7 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import videopelitietokanta.videopelitietokanta.FileDao;
-import videopelitietokanta.videopelitietokanta.VideoGame;
+import domain.VideoGame;
 
 /**
  *
@@ -41,7 +41,7 @@ public class VideoGamesTest {
     }
 
     @Test
-    public void saveOneGame() {
+    public void saveOneGameAndReadIt() {
         VideoGame mario = new VideoGame("mario", "nes", 1985);
         FileDao fileDao = new FileDao();
         fileDao.add(mario);
@@ -51,6 +51,10 @@ public class VideoGamesTest {
         try (Scanner reader = new Scanner(new File("games.txt"))) {
             while (reader.hasNextLine()) {
                 written = reader.nextLine();
+                if (written.equals(mario.asFileString())) {
+                    break;
+                }
+
             }
 
         } catch (Exception e) {

@@ -1,17 +1,19 @@
+package videopelitietokanta.videopelitietokanta;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+
+
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import javax.swing.Box;
+import domain.VideoGame;
 
 /**
  *
@@ -60,6 +62,12 @@ public class FileDao implements Dao {
 
     public void deleteAll() {
         file.delete();
+        try {
+            FileWriter fileMaker = new FileWriter(new File("games.txt"));
+            fileMaker.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void close() {

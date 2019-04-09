@@ -5,21 +5,17 @@
  */
 package videopelitietokanta.videopelitietokanta;
 
-
+import domain.TextUI;
 
 /**
  *
  * @author tkelomak
  */
 public class VideoGameDataBaseApplication {
-    
-    public static void main(String[] args){
-            TextUI textUI=new TextUI();
-            textUI.start();
+
+    public static void main(String[] args) {
+        TextUI textUI = new TextUI();
+        textUI.start();
     }
-    
 
-    
-
-    
 }

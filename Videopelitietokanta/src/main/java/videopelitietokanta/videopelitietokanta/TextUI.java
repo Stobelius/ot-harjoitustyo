@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+package domain;
 
+import videopelitietokanta.videopelitietokanta.FileDao;
 import java.util.Scanner;
 
 /**
@@ -49,7 +50,7 @@ public class TextUI {
                 fileDao.add(game);
 
             } else if (input.equals("2")) {
-                System.out.println("nyt tulostetaan pelejä");
+                System.out.println("tulostetaan pelit muodossa");
                 System.out.println("peli,   konsoli,   vuosi");
                 for (VideoGame vg : fileDao.list()) {
                     System.out.println(vg.toString());
