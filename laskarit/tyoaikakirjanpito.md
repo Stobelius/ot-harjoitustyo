@@ -7,3 +7,5 @@
 | 1.4   | 3    | Koodauksen aloittaminen, ensimmäisten luokkien luonti |
 | 2.4   | 3    | Yhden pelin tallentaminen tiedostoon ja sen testaaminen. Githubin siivoaminen|
 | 8.4   | 5    | Monen pelin lisäys |
+| 9.4   | 6    | Taistelu pakettien jakamisen kanssa ja häviö|
+| yht   | 20   | 
