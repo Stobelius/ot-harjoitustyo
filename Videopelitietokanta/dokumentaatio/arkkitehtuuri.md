@@ -1,1 +1,1 @@
-file:///home/stobe/Desktop/otkuva.jpg
+![](file:///home/stobe/Desktop/otkuva.jpg)
