@@ -4,7 +4,7 @@ Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetä�
 ## Ongelmia pakkauksiin jakaessa
 Aiemmin minulla oli kaikki koodi samassa pakkauksessa. Kun rupesin jakamaan sitä, kuten pyydettiin, niin koodi ei enää toiminutkaan. En saanut tätä korjattua mitenkään helposti yksinäni, joten siirsin kaikki takaisin samaan pakkaukseen. Koodi kääntyy nyt sentään jotenkin, mutta siinä on edelleen enemmän bugeja, kun ennen pakkauksiin jakoa. Aion katsoa tätä pajassa ohjaajien kanssa, kunhan tervehdyn ja pääsen laitokselle. 
 
-Tosiaan pakkauksiin jako on nyt kesken, mutta aion sen tehdä seuraavalla tavalla. Pakkaus ui: VideoGameDataBaseApplication, TextUI. Pakkaus domain: VideoGame. Pakkaus dao: Dao, FileDao.
+Tosiaan pakkauksiin jako on nyt kesken, mutta aion sen tehdä, kuten arkkitehtuuri dokumentaatiossa se on.
 
 
 
