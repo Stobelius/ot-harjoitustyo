@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 import java.io.File;
 import java.util.Scanner;
 import org.junit.After;
@@ -12,8 +13,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import videopelitietokanta.videopelitietokanta.FileDao;
-import videopelitietokanta.videopelitietokanta.VideoGame;
+import videopelitietokanta.dao.FileDao;
+import videopelitietokanta.domain.VideoGame;
 
 
 /**

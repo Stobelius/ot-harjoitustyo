@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.ui;
 
 
+import videopelitietokanta.dao.FileDao;
 import java.util.Scanner;
+import videopelitietokanta.domain.VideoGame;
 
 /**
  *
@@ -55,13 +57,14 @@ public class TextUI {
                 for (VideoGame vg : fileDao.list()) {
                     System.out.println(vg.toString());
                 }
+                System.out.println("");
 
             } else if (input.equals("3")) {
                 System.out.println("poistetaan kaikki");
                 fileDao.deleteAll();
                 
             } else if (input.equals("q")) {
-                fileDao.close();
+                
                 break;
             }
 

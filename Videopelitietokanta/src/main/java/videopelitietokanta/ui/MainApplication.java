@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.ui;
+
+import videopelitietokanta.ui.TextUI;
 
 
 
@@ -11,7 +13,7 @@ package videopelitietokanta.videopelitietokanta;
  *
  * @author tkelomak
  */
-public class VideoGameDataBaseApplication {
+public class MainApplication {
 
     public static void main(String[] args) {
         TextUI textUI = new TextUI();

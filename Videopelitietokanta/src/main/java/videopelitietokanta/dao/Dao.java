@@ -1,6 +1,7 @@
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.dao;
 
 import java.util.List;
+import videopelitietokanta.domain.VideoGame;
 
 
 /*
