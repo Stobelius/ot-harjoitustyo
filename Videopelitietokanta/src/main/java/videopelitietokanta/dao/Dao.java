@@ -16,7 +16,8 @@ import videopelitietokanta.domain.VideoGame;
 
 public interface Dao {
 
-    void add(VideoGame game);
+    boolean add(VideoGame game);
+    boolean remove(String name);
 
     List<VideoGame> list();
 

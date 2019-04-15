@@ -32,7 +32,7 @@ public class VideoGame {
 
     @Override
     public String toString() {
-        return name + ",  " + console + ",  " + publicationYear + " "; //To change body of generated methods, choose Tools | Templates.
+        return name + ",  " + console + ",  " + publicationYear; //To change body of generated methods, choose Tools | Templates.
     }
 
     public void complete() {

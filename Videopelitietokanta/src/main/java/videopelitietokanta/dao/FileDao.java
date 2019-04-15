@@ -45,22 +45,56 @@ public class FileDao implements Dao {
     }
 
     @Override
-    public void add(VideoGame game) {
+    public boolean add(VideoGame game) {
+        if (this.contains(game)) {
+            return false;
+        }
+
         try {
 
             writer.write(game.asFileString() + "\r\n");
             writer.flush();
+            return true;
 
         } catch (Exception e) {
             System.out.println("not managing to write to file " + e.getMessage());
         }
+        return false;
 
     }
 
+    private boolean contains(VideoGame game) {
+
+        if (this.list().contains(game)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean remove(String name) {
+        VideoGame game=new VideoGame(name,"",0);      
+        
+        if (!this.contains(game)) {
+            return false;
+        }
+        List<VideoGame> gameList = this.list();
+        gameList.remove(game);
+        this.deleteAll();
+
+        for (VideoGame vg : gameList) {
+            this.add(vg);
+        }
+
+        return true;
+    }
+
     public void deleteAll() {
-        file.delete();
+        
         try {
-            FileWriter fileMaker = new FileWriter(new File("games.txt"));
+            FileWriter fileMaker = new FileWriter(file);
+            fileMaker.write("");
             fileMaker.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
