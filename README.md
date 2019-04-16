@@ -26,3 +26,5 @@ mvn test jacoco:report
 
 Checkstyle:`mvn jxr:jxr checkstyle:checkstyle`
 
+jar tiedoston genenerointi: `mvn package`
+
