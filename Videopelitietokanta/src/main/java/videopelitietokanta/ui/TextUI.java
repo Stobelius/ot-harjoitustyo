@@ -33,13 +33,13 @@ public class TextUI {
                 System.out.println("Anna nimi:");
                 String name = reader.nextLine();
                 System.out.println("Anna konsoli");
-                String gameConsole = reader.next();
+                String gameConsole = reader.nextLine();
                 System.out.println("Anna julkaisuvuosi");
                 boolean properIntRecieved = false;
                 int year = -1;
                 while (!properIntRecieved) {
                     try {
-                        year = Integer.parseInt(reader.next());
+                        year = Integer.parseInt(reader.nextLine());
                         properIntRecieved = true;
                     } catch (Exception e) {
                         System.out.println("Anna julkaisuvuosi numerona");
