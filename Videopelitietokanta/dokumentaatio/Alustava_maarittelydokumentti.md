@@ -6,7 +6,7 @@ Käyttäjä voi tulostaa tilastoja eri lajitteluiden perusteella. Esimerkkejä t
 - kuinka monta peliä eri konsoleille on
 - kuinka suuri osa peleistä on pelattu
 
-Tilastot tallennetaan sql-tietokanta tauluun. Käyttöliittymä ei ole graafinen.
+Tilastot tallennetaan tekstitiedostoon. Käyttöliittymä ei ole graafinen.
 
 Sovelluksessa yritetään saada ensin perusasiat kondikseen. Tämän jälkeen sitä voi laajentaa esimerkiksi seuraavilla tavoilla:
 - graafinen käyttöliittymä
