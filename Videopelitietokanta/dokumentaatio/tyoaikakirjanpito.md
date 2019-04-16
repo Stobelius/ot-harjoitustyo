@@ -10,4 +10,5 @@
 | 9.4   | 6    | Taistelu pakettien jakamisen kanssa ja häviö|
 | 12.4  | 1    | Pakettien korjaus pajassa|
 | 15.4  | 2    | Monen pelin lisäämisen esto|
-| yht   | 23   | 
+| 16.4  | 3    | Dokumentaatiota ja mavenjuttuja toimimaan|
+| yht   | 26   | 
