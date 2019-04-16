@@ -65,13 +65,12 @@ public class TextUI {
 
                 System.out.println("Anna nimi:");
                 String name = reader.nextLine();
-                boolean removed=fileDao.remove(name);
-                if(removed){
+                boolean removed = fileDao.remove(name);
+                if (removed) {
                     System.out.println("poistettu");
-                } else{
+                } else {
                     System.out.println("ei ole tuon nimistä peliä alunperinkään");
                 }
-                
 
             } else if (input.equals("4")) {
                 System.out.println("poistetaan kaikki");

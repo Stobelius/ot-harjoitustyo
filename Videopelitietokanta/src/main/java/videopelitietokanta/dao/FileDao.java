@@ -74,8 +74,8 @@ public class FileDao implements Dao {
 
     @Override
     public boolean remove(String name) {
-        VideoGame game=new VideoGame(name,"",0);      
-        
+        VideoGame game = new VideoGame(name, "", 0);
+
         if (!this.contains(game)) {
             return false;
         }
@@ -91,7 +91,7 @@ public class FileDao implements Dao {
     }
 
     public void deleteAll() {
-        
+
         try {
             FileWriter fileMaker = new FileWriter(file);
             fileMaker.write("");
