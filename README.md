@@ -11,7 +11,7 @@ Tosiaan pakkauksiin jako on nyt kesken, mutta aion sen tehdä, kuten arkkitehtuu
 ## Dokumentaatio
 [Määrittelydokumentti](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko2/Alustava_maarittelydokumentti.md)
 
-[Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/tyoaikakirjanpito.md
 
 [Arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
 
