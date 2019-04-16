@@ -8,4 +8,6 @@
 | 2.4   | 3    | Yhden pelin tallentaminen tiedostoon ja sen testaaminen. Githubin siivoaminen|
 | 8.4   | 5    | Monen pelin lisäys |
 | 9.4   | 6    | Taistelu pakettien jakamisen kanssa ja häviö|
-| yht   | 20   | 
+| 12.4  | 1    | Pakettien korjaus pajassa|
+| 15.4  | 2    | Monen pelin lisäämisen esto|
+| yht   | 23   | 
