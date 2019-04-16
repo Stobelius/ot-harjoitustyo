@@ -1,8 +1,8 @@
-##Pakkausrakenne:
+## Pakkausrakenne:
 
 ![](OTarkkitehtuuri.png)
 
-##Sekvenssikaavio tulostuksesta
+## Sekvenssikaavio tulostuksesta
 
 ![](Tulostus.png)
 
