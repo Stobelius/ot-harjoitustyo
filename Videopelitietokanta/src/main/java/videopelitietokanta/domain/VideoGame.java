@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.domain;
 
 import java.util.Objects;
 
@@ -32,7 +32,7 @@ public class VideoGame {
 
     @Override
     public String toString() {
-        return name + ",  " + console + ",  " + publicationYear + " "; //To change body of generated methods, choose Tools | Templates.
+        return name + ",  " + console + ",  " + publicationYear; //To change body of generated methods, choose Tools | Templates.
     }
 
     public void complete() {

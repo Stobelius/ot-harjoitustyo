@@ -1,6 +1,7 @@
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.dao;
 
 import java.util.List;
+import videopelitietokanta.domain.VideoGame;
 
 
 /*
@@ -15,7 +16,8 @@ import java.util.List;
 
 public interface Dao {
 
-    void add(VideoGame game);
+    boolean add(VideoGame game);
+    boolean remove(String name);
 
     List<VideoGame> list();
 

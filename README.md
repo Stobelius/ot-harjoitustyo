@@ -1,17 +1,26 @@
 # Videopelitietokanta
 Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetään kirjaa ja luodaan tilastoja.
 
-## Dokumentaatio
-[Määrittelydokumentti](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/viikko2/Alustava_maarittelydokumentti.md)
 
-[Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/laskarit/tyoaikakirjanpito.md)
+
+
+## Dokumentaatio
+[Määrittelydokumentti](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/Alustava_maarittelydokumentti.md)
+
+[Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/tyoaikakirjanpito.md)
+
+[Arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
 
 
 ## Komentorivitoiminnot
 Testit suoritetaan komennolla: `mvn test`
 
-Testikattavuus ei toiminut laitoksen koneella komennolla 
+Testikattavuus:
 ``
 mvn test jacoco:report
 ``
-sillä tuli joku NoPluginFoundForPrefixException virhe, mitä en ymmärtänyt.
+
+Checkstyle:`mvn jxr:jxr checkstyle:checkstyle`
+
+jar-tiedoston genenerointi: `mvn package`
+

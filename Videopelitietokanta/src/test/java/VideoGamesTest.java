@@ -12,9 +12,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import videopelitietokanta.videopelitietokanta.FileDao;
-import videopelitietokanta.videopelitietokanta.VideoGame;
-
+import videopelitietokanta.dao.FileDao;
+import videopelitietokanta.domain.VideoGame;
 
 /**
  *
@@ -43,7 +42,7 @@ public class VideoGamesTest {
 
     @Test
     public void saveOneGameAndReadIt() {
-        VideoGame mario = new VideoGame("mario", "nes", 1985);
+        VideoGame mario = new VideoGame("testgame1", "testconsole", -1);
         FileDao fileDao = new FileDao();
         fileDao.add(mario);
 
@@ -61,8 +60,23 @@ public class VideoGamesTest {
         } catch (Exception e) {
             System.out.println("Not managing to read file in test" + e.getMessage());
         }
+        fileDao.remove(mario.getName());
 
         assertEquals(mario.asFileString(), written);
+
+    }
+
+    @Test
+    public void notAbleToAddDuplicateGames() {
+        VideoGame mario = new VideoGame("testgame2", "testconsole", -1);
+        FileDao fileDao = new FileDao();
+        fileDao.add(mario);
+        
+        boolean duplicate=fileDao.add(mario);
+        assertEquals(duplicate, false);
+        
+        fileDao.remove(mario.getName());
+        
 
     }
 

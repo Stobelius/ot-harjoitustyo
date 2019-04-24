@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.videopelitietokanta;
+package videopelitietokanta.ui;
 
-
+import videopelitietokanta.dao.FileDao;
 import java.util.Scanner;
+import videopelitietokanta.domain.VideoGame;
 
 /**
  *
@@ -23,22 +24,22 @@ public class TextUI {
         FileDao fileDao = new FileDao();
 
         while (true) {
-            System.out.println("1 syötä peli, 2 tulosta pelejä, 3 poista kaikki, q lopeta");
+            System.out.println("1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 poista kaikki, q lopeta");
 
             String input = reader.nextLine();
 
             if (input.equals("1")) {
                 System.out.println("nyt syötetään peli");
                 System.out.println("Anna nimi:");
-                String name = reader.next();
+                String name = reader.nextLine();
                 System.out.println("Anna konsoli");
-                String gameConsole = reader.next();
+                String gameConsole = reader.nextLine();
                 System.out.println("Anna julkaisuvuosi");
                 boolean properIntRecieved = false;
                 int year = -1;
                 while (!properIntRecieved) {
                     try {
-                        year = Integer.parseInt(reader.next());
+                        year = Integer.parseInt(reader.nextLine());
                         properIntRecieved = true;
                     } catch (Exception e) {
                         System.out.println("Anna julkaisuvuosi numerona");
@@ -47,7 +48,10 @@ public class TextUI {
 
                 VideoGame game = new VideoGame(name, gameConsole, year);
 
-                fileDao.add(game);
+                boolean added = fileDao.add(game);
+                if (!added) {
+                    System.out.println("peli on jo lisätty");
+                }
 
             } else if (input.equals("2")) {
                 System.out.println("tulostetaan pelit muodossa");
@@ -55,13 +59,25 @@ public class TextUI {
                 for (VideoGame vg : fileDao.list()) {
                     System.out.println(vg.toString());
                 }
+                System.out.println("");
 
             } else if (input.equals("3")) {
+
+                System.out.println("Anna nimi:");
+                String name = reader.nextLine();
+                boolean removed = fileDao.remove(name);
+                if (removed) {
+                    System.out.println("poistettu");
+                } else {
+                    System.out.println("ei ole tuon nimistä peliä alunperinkään");
+                }
+
+            } else if (input.equals("4")) {
                 System.out.println("poistetaan kaikki");
                 fileDao.deleteAll();
-                
+
             } else if (input.equals("q")) {
-                fileDao.close();
+
                 break;
             }
 
