@@ -130,4 +130,25 @@ public class FileDao implements Dao {
         return currentList;
     }
 
+    public List<VideoGame> alphabeticList() {
+        List<VideoGame> gameList = this.list();
+        AlphabeticGameComparator alpha = new AlphabeticGameComparator();
+        gameList.sort(alpha);
+        return gameList;
+    }
+
+    public List<VideoGame> yearList() {
+        List<VideoGame> gameList = this.list();
+        YearGameComparator alpha = new YearGameComparator();
+        gameList.sort(alpha);
+        return gameList;
+    }
+
+    public List<VideoGame> consoleList() {
+        List<VideoGame> gameList = this.list();
+        ConsoleGameComparator alpha = new ConsoleGameComparator();
+        gameList.sort(alpha);
+        return gameList;
+    }
+
 }
