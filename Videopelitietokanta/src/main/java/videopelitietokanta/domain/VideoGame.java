@@ -32,7 +32,12 @@ public class VideoGame {
 
     @Override
     public String toString() {
-        return name + ",  " + console + ",  " + publicationYear; //To change body of generated methods, choose Tools | Templates.
+        String complition="ei pelattu läpi";
+        if(this.completed){
+            
+            complition="pelattu läpi";
+        }
+        return name + ",  " + console + ",  " + publicationYear+", "+complition; 
     }
 
     public void complete() {

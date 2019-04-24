@@ -63,6 +63,33 @@ public class FileDao implements Dao {
 
     }
 
+    private VideoGame getGameByName(String name) {
+        for (VideoGame vg : this.list()) {
+            if (vg.getName().equals(name)) {
+                return vg;
+            }
+        }
+
+        return null;
+    }
+
+    public boolean complete(String name) {
+        VideoGame testGame = new VideoGame(name, "", 0);
+        if (!this.contains(testGame)) {
+            return false;
+        }
+
+        VideoGame game = this.getGameByName(name);
+
+        game.complete();
+        System.out.println(game.toString());
+
+        this.remove(name);
+        this.add(game);
+        System.out.println("halp");
+        return true;
+    }
+
     private boolean contains(VideoGame game) {
 
         if (this.list().contains(game)) {
@@ -120,13 +147,14 @@ public class FileDao implements Dao {
                 String s = reader.nextLine();
                 String[] parts = s.split(";");
                 VideoGame game = new VideoGame(parts[0], parts[1], Integer.parseInt(parts[2]));
+                if (Boolean.parseBoolean(parts[3])) {
+                    game.complete();
+                }
                 currentList.add(game);
             }
-
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return currentList;
     }
 
