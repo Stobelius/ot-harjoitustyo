@@ -3,12 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package videopelitietokanta.dao;
+package videopelitietokanta.domain;
 
-/**
- *
- * @author stobe
- */
 import java.util.Comparator;
 import videopelitietokanta.domain.VideoGame;
 
@@ -16,11 +12,11 @@ import videopelitietokanta.domain.VideoGame;
  *
  * @author stobe
  */
-public class YearGameComparator implements Comparator<VideoGame> {
+public class AlphabeticGameComparator implements Comparator<VideoGame> {
 
     @Override
     public int compare(VideoGame game1, VideoGame game2) {
-        return game1.getPublicationYear()-game2.getPublicationYear();
+        return game1.getName().compareTo(game2.getName());
 
     }
 }

@@ -5,10 +5,14 @@ package videopelitietokanta.dao;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import videopelitietokanta.domain.YearGameComparator;
+import videopelitietokanta.domain.ConsoleGameComparator;
+import videopelitietokanta.domain.AlphabeticGameComparator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -81,7 +85,7 @@ public class FileDao implements Dao {
 
         VideoGame game = this.getGameByName(name);
 
-        game.complete();
+        game.setCompleted(true);
         System.out.println(game.toString());
 
         this.remove(name);
@@ -148,7 +152,7 @@ public class FileDao implements Dao {
                 String[] parts = s.split(";");
                 VideoGame game = new VideoGame(parts[0], parts[1], Integer.parseInt(parts[2]));
                 if (Boolean.parseBoolean(parts[3])) {
-                    game.complete();
+                    game.setCompleted(true);
                 }
                 currentList.add(game);
             }
@@ -177,6 +181,30 @@ public class FileDao implements Dao {
         ConsoleGameComparator alpha = new ConsoleGameComparator();
         gameList.sort(alpha);
         return gameList;
+    }
+
+    public List<String> statistics() {
+        List<VideoGame> gameList = this.list();
+        HashMap<String, int[]> consoleMap = new HashMap<>();
+
+        for (VideoGame vg : gameList) {
+            if (!consoleMap.containsKey(vg.getConsole())) {
+                int[] pair = new int[2];
+                if (vg.isCompleted()) {
+                    pair[0] = 1;
+                }
+                pair[1] = 1;
+                consoleMap.put(vg.getConsole(), pair);
+            } else {
+                int[] pair = consoleMap.get(vg.getConsole());
+                if (vg.isCompleted()) {
+                    pair[0]++;
+                }
+                pair[1]++;
+                consoleMap.put(vg.getConsole(), pair);
+            }
+        }
+        return null;
     }
 
 }

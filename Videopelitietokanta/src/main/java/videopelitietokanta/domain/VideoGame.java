@@ -35,14 +35,15 @@ public class VideoGame {
         String complition="ei pelattu läpi";
         if(this.completed){
             
-            complition="pelattu läpi";
+            complition="läpivedetty";
         }
         return name + ",  " + console + ",  " + publicationYear+", "+complition; 
     }
 
-    public void complete() {
-        this.completed = true;
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
+    
 
     public String getName() {
         return name;

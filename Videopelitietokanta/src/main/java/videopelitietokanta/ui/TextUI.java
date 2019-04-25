@@ -76,7 +76,8 @@ public class TextUI {
                         }
                     }
                     System.out.println("tulostetaan pelit muodossa");
-                    System.out.println("peli,   konsoli,   vuosi");
+                    System.out.println("peli,   konsoli,   vuosi, pelattu läpi");
+                    System.out.println("");
                     for (VideoGame vg : printingList) {
                         System.out.println(vg.toString());
                     }
