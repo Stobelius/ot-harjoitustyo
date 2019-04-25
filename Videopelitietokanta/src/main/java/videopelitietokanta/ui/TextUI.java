@@ -26,7 +26,7 @@ public class TextUI {
 
         OUTER_1:
         while (true) {
-            System.out.println("1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 poista kaikki, q lopeta");
+            System.out.println("1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta");
             String input = reader.nextLine();
             switch (input) {
                 case "1": {
@@ -99,7 +99,14 @@ public class TextUI {
                     String completed = reader.nextLine();
                     fileDao.complete(completed);
                     break;
+                    
                 case "5":
+                    System.out.println("tulostetaan tilastoja");
+                    for(String s: fileDao.statisticsAsText()){
+                        System.out.println(s);
+                    }                    
+                    break;
+                case "6":
                     System.out.println("Varmista, että haluat poistaa kaikki Y");
                     String confirmation = reader.nextLine();
                     if (confirmation.equals("Y")) {

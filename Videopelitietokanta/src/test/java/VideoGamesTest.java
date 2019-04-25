@@ -71,12 +71,22 @@ public class VideoGamesTest {
         VideoGame mario = new VideoGame("testgame2", "testconsole", -1);
         FileDao fileDao = new FileDao();
         fileDao.add(mario);
-        
-        boolean duplicate=fileDao.add(mario);
+
+        boolean duplicate = fileDao.add(mario);
         assertEquals(duplicate, false);
-        
+
         fileDao.remove(mario.getName());
-        
+
+    }
+
+    @Test
+    public void removeGame() {
+        VideoGame mario = new VideoGame("testgame3", "testconsole", -1);
+        FileDao fileDao = new FileDao();
+        fileDao.add(mario);
+        fileDao.remove(mario.getName());
+
+        assertEquals(fileDao.contains(mario), false);
 
     }
 

@@ -86,15 +86,14 @@ public class FileDao implements Dao {
         VideoGame game = this.getGameByName(name);
 
         game.setCompleted(true);
-        System.out.println(game.toString());
 
         this.remove(name);
         this.add(game);
-        System.out.println("halp");
+
         return true;
     }
 
-    private boolean contains(VideoGame game) {
+    public boolean contains(VideoGame game) {
 
         if (this.list().contains(game)) {
             return true;
@@ -183,10 +182,9 @@ public class FileDao implements Dao {
         return gameList;
     }
 
-    public List<String> statistics() {
+    private HashMap<String, int[]> statistics() {
         List<VideoGame> gameList = this.list();
         HashMap<String, int[]> consoleMap = new HashMap<>();
-
         for (VideoGame vg : gameList) {
             if (!consoleMap.containsKey(vg.getConsole())) {
                 int[] pair = new int[2];
@@ -204,7 +202,17 @@ public class FileDao implements Dao {
                 consoleMap.put(vg.getConsole(), pair);
             }
         }
-        return null;
+        return consoleMap;
+    }
+
+    public List<String> statisticsAsText() {
+        List<String> statisticsList = new ArrayList<>();
+        for (String console : this.statistics().keySet()) {
+            String stat = console + " yhteensä " + this.statistics().get(console)[1] + " läpivedetty " + this.statistics().get(console)[0];
+            statisticsList.add(stat);
+        }
+
+        return statisticsList;
     }
 
 }
