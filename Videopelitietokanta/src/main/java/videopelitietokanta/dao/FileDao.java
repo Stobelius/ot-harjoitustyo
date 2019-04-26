@@ -1,10 +1,5 @@
 package videopelitietokanta.dao;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import videopelitietokanta.domain.YearGameComparator;
 import videopelitietokanta.domain.ConsoleGameComparator;
 import videopelitietokanta.domain.AlphabeticGameComparator;
@@ -20,8 +15,8 @@ import java.util.logging.Logger;
 import videopelitietokanta.domain.VideoGame;
 
 /**
- *
- * @author tkelomak
+ * Luokka kirjoittaa videopelejä tiedostoon, sekä lukee sieltä listoja ja
+ * järjestää niitä.
  */
 public class FileDao implements Dao {
 
@@ -48,6 +43,13 @@ public class FileDao implements Dao {
 
     }
 
+    /**
+     * Lisää videopelin tiedostoon.
+     *
+     * @param game Käyttäjän tiedoista muodostettu peli
+     * @return Palauttaa true, jos pelin lisääminen onnistui. Palauttaa false,
+     * jos samanniminen peli on jo tiedostossa.
+     */
     @Override
     public boolean add(VideoGame game) {
         if (this.contains(game)) {
@@ -77,6 +79,15 @@ public class FileDao implements Dao {
         return null;
     }
 
+    /**
+     * Merkitsee, että annettu peli on pelattu läpi.
+     *
+     *
+     * @param name Pelin nimi
+     *
+     * @return Paluttaa true, argumentin niminen peli löydettiin tiedostosta ja
+     * muutettiin läpipelatuksi. Palauttaa false, jos peliä ei löydetty.
+     */
     public boolean complete(String name) {
         VideoGame testGame = new VideoGame(name, "", 0);
         if (!this.contains(testGame)) {
@@ -93,6 +104,12 @@ public class FileDao implements Dao {
         return true;
     }
 
+    /**
+     * Kertoo, onko kyseinen peli jo tiedostossa.
+     *
+     * @param game Pelin nimi
+     * @return Löytyykö peli
+     */
     public boolean contains(VideoGame game) {
 
         if (this.list().contains(game)) {
@@ -102,6 +119,15 @@ public class FileDao implements Dao {
         return false;
     }
 
+    /**
+     * Poistaa pelin, jonka nimenä on annettu argumentti
+     *
+     *
+     * @param name Pelin nimi
+     *
+     * @return Paluttaa true, argumentin niminen peli löydettiin tiedostosta ja
+     * poistettiin. Palauttaa false, jos peliä ei löydetty.
+     */
     @Override
     public boolean remove(String name) {
         VideoGame game = new VideoGame(name, "", 0);
@@ -120,6 +146,10 @@ public class FileDao implements Dao {
         return true;
     }
 
+    /**
+     * Poistaa kaikki pelit tiedostosta
+     *
+     */
     public void deleteAll() {
 
         try {
@@ -131,14 +161,11 @@ public class FileDao implements Dao {
         }
     }
 
-    public void close() {
-        try {
-            writer.close();
-        } catch (Exception e) {
-            System.out.println("didnt manage to close the filewriter connection");
-        }
-    }
-
+    /**
+     * Palauttaa kaikki pelit listana
+     *
+     * @return Palauttaa kaikki pelit listana satunnaisessa järjestyksessä
+     */
     @Override
     public List<VideoGame> list() {
 
@@ -161,6 +188,12 @@ public class FileDao implements Dao {
         return currentList;
     }
 
+    /**
+     * Palauttaa kaikki pelit aakkosittain järjestettynä
+     *
+     * @return Palauttaa kaikki pelit aakkosjärjestyksessä nimen mukaan
+     */
+    @Override
     public List<VideoGame> alphabeticList() {
         List<VideoGame> gameList = this.list();
         AlphabeticGameComparator alpha = new AlphabeticGameComparator();
@@ -168,6 +201,12 @@ public class FileDao implements Dao {
         return gameList;
     }
 
+    /**
+     * Palauttaa kaikki pelit iän mukaan järjestettynä
+     *
+     * @return Palauttaa kaikki pelit ikäjärjestyksessä
+     */
+    @Override
     public List<VideoGame> yearList() {
         List<VideoGame> gameList = this.list();
         YearGameComparator alpha = new YearGameComparator();
@@ -175,6 +214,12 @@ public class FileDao implements Dao {
         return gameList;
     }
 
+    /**
+     * Palauttaa kaikki pelit konsoleittain järjestettynä
+     *
+     * @return Palauttaa kaikki pelit järjestettynä konsoleittain
+     */
+    @Override
     public List<VideoGame> consoleList() {
         List<VideoGame> gameList = this.list();
         ConsoleGameComparator alpha = new ConsoleGameComparator();
@@ -205,6 +250,13 @@ public class FileDao implements Dao {
         return consoleMap;
     }
 
+    /**
+     * Palauttaa listan, jossa on käyttäjälle sievästi muotoiltuja tilastoja
+     * konsoleista. Tilastot on muutettu merkkijonoiksi valmiina tulostusta
+     * varten
+     *
+     * @return Palauttaa tilastot merkkijonoina
+     */
     public List<String> statisticsAsText() {
         List<String> statisticsList = new ArrayList<>();
         for (String console : this.statistics().keySet()) {

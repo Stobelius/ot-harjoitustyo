@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package videopelitietokanta.domain;
 
 import java.util.Objects;
 
 /**
- *
- * @author stobe
+ * Lähinnä gettereitä ja setteritä sisältävä luokka, johon tallennetaan tiedot
+ * yksittäisestä pelistä. Samannimiset pelit samaistetaan.
  */
 public class VideoGame {
 
@@ -32,18 +27,17 @@ public class VideoGame {
 
     @Override
     public String toString() {
-        String complition="ei pelattu läpi";
-        if(this.completed){
-            
-            complition="läpivedetty";
+        String complition = "ei pelattu läpi";
+        if (this.completed) {
+
+            complition = "läpivedetty";
         }
-        return name + ",  " + console + ",  " + publicationYear+", "+complition; 
+        return name + ",  " + console + ",  " + publicationYear + ", " + complition;
     }
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
-    
 
     public String getName() {
         return name;

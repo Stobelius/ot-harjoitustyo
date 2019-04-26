@@ -3,21 +3,23 @@ package videopelitietokanta.dao;
 import java.util.List;
 import videopelitietokanta.domain.VideoGame;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author stobe
+ * Rajapinta tiedoston lukemiseen, jonka FileDao toteuttaa
  */
-
 public interface Dao {
 
     boolean add(VideoGame game);
+
     boolean remove(String name);
+
+    boolean contains(VideoGame game);
+
+    List<VideoGame> alphabeticList();
+
+    List<VideoGame> yearList();
+
+    List<VideoGame> consoleList();
 
     List<VideoGame> list();
 

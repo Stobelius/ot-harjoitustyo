@@ -11,13 +11,12 @@ import java.util.Scanner;
 import videopelitietokanta.domain.VideoGame;
 
 /**
- *
- * @author tkelomak
+ * Teksitikäyttöliittymä, joka käyttää fileDao-luokkaa tietojen lukemiseen ja
+ * tallentamiseen
  */
 public class TextUI {
 
     public TextUI() {
-
     }
 
     public void start() {
@@ -99,12 +98,12 @@ public class TextUI {
                     String completed = reader.nextLine();
                     fileDao.complete(completed);
                     break;
-                    
+
                 case "5":
                     System.out.println("tulostetaan tilastoja");
-                    for(String s: fileDao.statisticsAsText()){
+                    for (String s : fileDao.statisticsAsText()) {
                         System.out.println(s);
-                    }                    
+                    }
                     break;
                 case "6":
                     System.out.println("Varmista, että haluat poistaa kaikki Y");
