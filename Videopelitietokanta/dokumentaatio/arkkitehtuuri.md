@@ -1,8 +1,29 @@
 ## Pakkausrakenne:
 
+Pakkausrakenne on suurpiirteisesti kuvattu alla. Näiden luokkien lisäksi domain pakkaus sisältää kolme Comparator luokkaa, joita käytetään FileDao käyttää videopelien järjestämiseen. 
+
 ![](OTarkkitehtuuri.png)
 
 ## Sekvenssikaavio tulostuksesta
 
 ![](Tulostus.png)
+
+## Tietojen pysyväisväistallennus
+
+Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa olevaan ennalta määrättyyn games.txt tiedostoon. Ennalta määrätyn tekstitiedoston muuttaminen kovakoodatusta käyttäjän määriteltäväksi olisi helpohkoa toteuttaa tämänhetkiseen FileDao-luokkaan.
+
+Pelit tallennetaan tiedostoon muodossa
+
+<pre>
+Super Mario;nes;1987;true
+Metroid;nes;1988;false
+</pre>
+
+Toisaalta FileDao:n voisi korvata tietokantaan perustuvalla tallennusjärjestelyllä. Tällöin pitäisi luoda uusi luokka esim SQLDao, joka totetuttaisi Dao rajapinnan.
+
+
+
+## Käyttöliittymä
+
+Mainapplication ei tee muuta, kuin käynnistää TextUi:n käyttöliittymän. Koodiltaan sekava tekstikäyttöliittymä voitaisiin korvata graafisella käyttöliittymällä.
 
