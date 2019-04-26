@@ -11,6 +11,8 @@ Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetä�
 
 [Alustava arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
 
+[Alustava käyttöohje](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/Alustava%20K%C3%A4ytt%C3%B6ohje.md)
+
 ## Releaset
 Käyttämällä koneellani tuli jar-tiedoston suorittamisessa virhe java.lang.UnsupportedClassVersionError Pienen Googlauksen mukaan tämä johtuisi koneeni java versiosta. Valitettavasti en pääse nyt testaamaan toisella koneella asiaa. Viime viikolla laitoksen koneella viime viikon jar toimi hyvin. Netbeansissa tämän viikon koodi kääntyy normaalisti. Julkaisin mahdollisesti ei kääntyvän jarin kuitenkin alla releasena.
 
