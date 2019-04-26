@@ -12,7 +12,7 @@ Pakkausrakenne on suurpiirteisesti kuvattu alla. Näiden luokkien lisäksi domai
 
 Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa olevaan ennalta määrättyyn games.txt tiedostoon. Ennalta määrätyn tekstitiedoston muuttaminen kovakoodatusta käyttäjän määriteltäväksi olisi helpohkoa toteuttaa tämänhetkiseen FileDao-luokkaan.
 
-Pelit tallennetaan tiedostoon muodossa:
+Pelit tallennetaan tiedostoon alla olevassa muodossa. Viimeisenä oleva boolean merkitsee, onko peli pelattu läpi.
 
 <pre>
 Super Mario;nes;1987;true
