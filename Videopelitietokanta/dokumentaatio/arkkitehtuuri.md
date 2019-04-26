@@ -12,12 +12,14 @@ Pakkausrakenne on suurpiirteisesti kuvattu alla. Näiden luokkien lisäksi domai
 
 Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa olevaan ennalta määrättyyn games.txt tiedostoon. Ennalta määrätyn tekstitiedoston muuttaminen kovakoodatusta käyttäjän määriteltäväksi olisi helpohkoa toteuttaa tämänhetkiseen FileDao-luokkaan.
 
-Pelit tallennetaan tiedostoon muodossa
+Pelit tallennetaan tiedostoon muodossa:
 
 <pre>
 Super Mario;nes;1987;true
 Metroid;nes;1988;false
 </pre>
+
+Pelit eivät saa sisältää puolipisteitä. Lisäksi kaksi peliä samaistetaan, jos niillä on sama nimi. Toisin sanoen samannimisiä pelejä ei voi tallentaa tietokantaan useita.
 
 Toisaalta FileDao:n voisi korvata tietokantaan perustuvalla tallennusjärjestelyllä. Tällöin pitäisi luoda uusi luokka esim SQLDao, joka totetuttaisi Dao rajapinnan.
 
