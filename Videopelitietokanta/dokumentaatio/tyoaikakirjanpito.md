@@ -11,7 +11,7 @@
 | 12.4  | 1    | Pakettien korjaus pajassa|
 | 15.4  | 2    | Monen pelin lisäämisen esto|
 | 16.4  | 3    | Dokumentaatiota ja mavenjuttuja toimimaan|
-| yht   | 26   |  |
 | 24.4  | 4    | Peleistä tieto, onko pelattu läpi | 
 | 25.4  | 3    | Tilastot ja yksi testi |
-
+| 26.4  | 6    | JavaDoc, testejä, arkkitehtuurikuvaus yms |
+| yht   | 39   |  |
