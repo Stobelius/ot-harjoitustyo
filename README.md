@@ -16,6 +16,8 @@ Käyttämällä koneellani tuli jar-tiedoston suorittamisessa error java.lang.Un
 
 [Viikko 6](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko6)
 
+[Viikko 5](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Komentorivitoiminnot
 Testit suoritetaan komennolla: `mvn test`
 
