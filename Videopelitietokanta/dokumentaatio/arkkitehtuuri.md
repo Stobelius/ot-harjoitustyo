@@ -15,7 +15,7 @@ Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa o
 Pelit tallennetaan tiedostoon alla olevassa muodossa. Viimeisenä oleva boolean merkitsee, onko peli pelattu läpi.
 
 <pre>
-Super Mario Bros.;nes;1987;true
+Super Mario Bros./Duck Hunt;nes;1987;true
 Metroid;nes;1988;false
 </pre>
 
