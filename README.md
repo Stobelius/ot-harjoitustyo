@@ -13,6 +13,7 @@ Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetä�
 
 ## Releaset
 Käyttämällä koneellani tuli jar-tiedoston suorittamisessa error java.lang.UnsupportedClassVersionError Pienen Googlauksen mukaan tämä johtuisi koneeni java versiosta. Valitettavasti en pääse nyt testaamaan toisella koneella asiaa. Viime viikolla laitoksen koneella viime viikon jar toimi hyvin. Netbeansissa tämän viikon koodi kääntyy normaalisti. Julkaisin mahdollisesti ei kääntyvän jarin kuitenkin alla releasena.
+
 [Viikko 6](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Komentorivitoiminnot
