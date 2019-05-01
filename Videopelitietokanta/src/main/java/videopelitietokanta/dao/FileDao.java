@@ -6,6 +6,7 @@ import videopelitietokanta.domain.AlphabeticGameComparator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -260,7 +261,13 @@ public class FileDao implements Dao {
     public List<String> statisticsAsText() {
         List<String> statisticsList = new ArrayList<>();
         for (String console : this.statistics().keySet()) {
-            String stat = console + " yhteensä " + this.statistics().get(console)[1] + " läpivedetty " + this.statistics().get(console)[0];
+            int amount=this.statistics().get(console)[1];
+            int completedAmount=this.statistics().get(console)[0];
+            double precent=completedAmount*1.0/amount;
+            DecimalFormat df = new DecimalFormat("##%");
+            
+            String stat = console + " yhteensä " + amount + " läpivedetty "
+                    +completedAmount +" läpivetoprosentti "+df.format(precent);
             statisticsList.add(stat);
         }
 

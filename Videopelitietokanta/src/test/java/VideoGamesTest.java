@@ -131,7 +131,8 @@ public class VideoGamesTest {
         VideoGame mario = new VideoGame("testgame4", "testconsole4", -1);
         FileDao fileDao = new FileDao();
         fileDao.add(mario);
-        boolean contains = fileDao.statisticsAsText().contains("testconsole4" + " yhteensä " + 1 + " läpivedetty " + 0);
+        boolean contains = fileDao.statisticsAsText().contains("testconsole4" + " yhteensä " + 1 + " läpivedetty " + 0+
+        " läpivetoprosentti "+ 0+"%");
         fileDao.remove(mario.getName());
 
         assertEquals(contains, true);
