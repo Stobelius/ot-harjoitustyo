@@ -21,7 +21,8 @@ public class TextUI {
 
     public TextUI() {
         this.reader = new Scanner(System.in);
-        this.fileDao = new FileDao();
+        this.fileDao = new FileDao("games.txt");
+
     }
 
     public void start() {
@@ -31,9 +32,9 @@ public class TextUI {
             System.out.println("1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta");
             String input = reader.nextLine();
             switch (input) {
-                case "1": 
+                case "1":
                     this.inputGame();
-                    break;                
+                    break;
                 case "2":
                     this.printGames();
                     break;

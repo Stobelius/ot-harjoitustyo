@@ -22,11 +22,13 @@ import videopelitietokanta.domain.VideoGame;
 public class FileDao implements Dao {
 
     private File file;
+    private String fileName;
     private FileWriter writer;
 
-    public FileDao() {
+    public FileDao(String fileName) {
 
-        this.file = new File("games.txt");
+        this.fileName = fileName;
+        this.file = new File(fileName);
         try {
             writer = new FileWriter(file, true);
 
@@ -261,13 +263,13 @@ public class FileDao implements Dao {
     public List<String> statisticsAsText() {
         List<String> statisticsList = new ArrayList<>();
         for (String console : this.statistics().keySet()) {
-            int amount=this.statistics().get(console)[1];
-            int completedAmount=this.statistics().get(console)[0];
-            double precent=completedAmount*1.0/amount;
+            int amount = this.statistics().get(console)[1];
+            int completedAmount = this.statistics().get(console)[0];
+            double precent = completedAmount * 1.0 / amount;
             DecimalFormat df = new DecimalFormat("##%");
-            
+
             String stat = console + " yhteensä " + amount + " läpivedetty "
-                    +completedAmount +" läpivetoprosentti "+df.format(precent);
+                    + completedAmount + " läpivetoprosentti " + df.format(precent);
             statisticsList.add(stat);
         }
 

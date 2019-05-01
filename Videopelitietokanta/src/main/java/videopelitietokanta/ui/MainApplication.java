@@ -1,5 +1,7 @@
 package videopelitietokanta.ui;
 
+import java.util.Scanner;
+
 /**
  *
  * Käynnistää tekstikäyttöliittymän
@@ -7,6 +9,7 @@ package videopelitietokanta.ui;
 public class MainApplication {
 
     public static void main(String[] args) {
+
         TextUI textUI = new TextUI();
         textUI.start();
     }

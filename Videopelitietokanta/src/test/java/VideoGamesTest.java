@@ -5,6 +5,7 @@
  */
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -24,6 +25,11 @@ import videopelitietokanta.domain.YearGameComparator;
  */
 public class VideoGamesTest {
 
+    FileDao testFileDao;
+    VideoGame testGame;
+    String testFileName;
+    File testFile;
+
     public VideoGamesTest() {
     }
 
@@ -37,24 +43,30 @@ public class VideoGamesTest {
 
     @Before
     public void setUp() {
+        testFileName = "testfile";
+        testFile = new File(testFileName);
+        testFileDao = new FileDao(testFileName);
+        testGame = new VideoGame("testgame", "testconsole", -1);
+
     }
 
     @After
     public void tearDown() {
+        testFileDao.deleteAll();
     }
 
     @Test
     public void saveOneGameAndReadIt() {
-        VideoGame mario = new VideoGame("testgame1", "testconsole", -1);
-        FileDao fileDao = new FileDao();
-        fileDao.add(mario);
+
+        testFileDao.add(testGame);
+        System.out.println("asd");
 
         String written = "";
 
-        try (Scanner reader = new Scanner(new File("games.txt"))) {
+        try (Scanner reader = new Scanner(testFile)) {
             while (reader.hasNextLine()) {
                 written = reader.nextLine();
-                if (written.equals(mario.asFileString())) {
+                if (written.equals(testGame.asFileString())) {
                     break;
                 }
 
@@ -63,33 +75,26 @@ public class VideoGamesTest {
         } catch (Exception e) {
             System.out.println("Not managing to read file in test" + e.getMessage());
         }
-        fileDao.remove(mario.getName());
 
-        assertEquals(mario.asFileString(), written);
+        assertEquals(testGame.asFileString(), written);
 
     }
 
     @Test
     public void notAbleToAddDuplicateGames() {
-        VideoGame mario = new VideoGame("testgame2", "testconsole", -1);
-        FileDao fileDao = new FileDao();
-        fileDao.add(mario);
+        testFileDao.add(testGame);
 
-        boolean duplicate = fileDao.add(mario);
+        boolean duplicate = testFileDao.add(testGame);
         assertEquals(duplicate, false);
-
-        fileDao.remove(mario.getName());
 
     }
 
     @Test
     public void removeGame() {
-        VideoGame mario = new VideoGame("testgame3", "testconsole", -1);
-        FileDao fileDao = new FileDao();
-        fileDao.add(mario);
-        fileDao.remove(mario.getName());
+        testFileDao.add(testGame);
+        testFileDao.remove(testGame.getName());
 
-        assertEquals(fileDao.contains(mario), false);
+        assertEquals(testFileDao.contains(testGame), false);
 
     }
 
@@ -128,20 +133,13 @@ public class VideoGamesTest {
 
     @Test
     public void statistcsAsTextContainsAddedConsole() {
-        VideoGame mario = new VideoGame("testgame4", "testconsole4", -1);
-        FileDao fileDao = new FileDao();
-        fileDao.add(mario);
-        boolean contains = fileDao.statisticsAsText().contains("testconsole4" + " yhteensä " + 1 + " läpivedetty " + 0+
-        " läpivetoprosentti "+ 0+"%");
-        fileDao.remove(mario.getName());
+        testFileDao.add(testGame);
+        boolean contains = testFileDao.statisticsAsText().contains(testGame.getConsole() + " yhteensä " + 1 + " läpivedetty " + 0
+                + " läpivetoprosentti " + 0 + "%");
 
         assertEquals(contains, true);
 
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
 }
