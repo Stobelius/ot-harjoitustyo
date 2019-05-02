@@ -16,4 +16,5 @@
 | 26.4  | 6    | JavaDoc, testejä, arkkitehtuurikuvaus yms |
 | yht   | 39   |  |
 | 1.5   | 4    | Refactorointia, pieniä parannuksia |
+| 2.5   | 2    | Todo lopullista palautusta varten ja testejä |
 
