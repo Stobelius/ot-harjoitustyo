@@ -59,7 +59,6 @@ public class VideoGamesTest {
     public void saveOneGameAndReadIt() {
 
         testFileDao.add(testGame);
-        System.out.println("asd");
 
         String written = "";
 
@@ -132,7 +131,7 @@ public class VideoGamesTest {
     }
 
     @Test
-    public void statistcsAsTextContainsAddedConsole() {
+    public void statisticsAsTextOneGameOneConsole() {
         testFileDao.add(testGame);
         boolean contains = testFileDao.statisticsAsText().contains(testGame.getConsole() + " yhteensä " + 1 + " läpivedetty " + 0
                 + " läpivetoprosentti " + 0 + "%");
@@ -141,5 +140,22 @@ public class VideoGamesTest {
 
     }
 
+    @Test
+    public void statisticsAsTextTwoGameOneConsole() {
+        testFileDao.add(testGame);
+        testFileDao.add(new VideoGame("mario", "testconsole", -2));
+        testFileDao.complete(testGame.getName());
+        boolean contains = testFileDao.statisticsAsText().contains(testGame.getConsole() + " yhteensä " + 2 + " läpivedetty " + 1
+                + " läpivetoprosentti " + 50 + "%");
+
+        assertEquals(contains, true);
+
+    }
+
+    @Test
+    public void videoGameToString() {
+        assertEquals(testGame.toString(), testGame.getName() + ",  " + testGame.getConsole() + ",  " + testGame.getPublicationYear() + ",  ei pelattu läpi");
+
+    }
 
 }

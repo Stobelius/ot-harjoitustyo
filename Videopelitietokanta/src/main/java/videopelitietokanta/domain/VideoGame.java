@@ -32,7 +32,7 @@ public class VideoGame {
 
             complition = "läpivedetty";
         }
-        return name + ",  " + console + ",  " + publicationYear + ", " + complition;
+        return name + ",  " + console + ",  " + publicationYear + ",  " + complition;
     }
 
     public void setCompleted(boolean completed) {

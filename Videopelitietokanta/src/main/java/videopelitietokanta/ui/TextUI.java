@@ -64,8 +64,16 @@ public class TextUI {
         System.out.println("nyt syötetään peli");
         System.out.println("Anna nimi:");
         String name = reader.nextLine();
+        if (name.contains(";")) {
+            System.out.println("pelin nimi tai konsoli ei saa sisältää puolipistettä");
+            return;
+        }
         System.out.println("Anna konsoli");
         String gameConsole = reader.nextLine();
+        if (gameConsole.contains(";")) {
+            System.out.println("pelin nimi tai konsoli ei saa sisältää puolipistettä");
+            return;
+        }
         System.out.println("Anna julkaisuvuosi");
         boolean properIntRecieved = false;
         int year = -1;

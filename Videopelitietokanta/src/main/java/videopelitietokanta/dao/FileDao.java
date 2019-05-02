@@ -25,6 +25,12 @@ public class FileDao implements Dao {
     private String fileName;
     private FileWriter writer;
 
+    /**
+     * Konstruktori luo parametrina annetun nimisen tiedoston ohjelman juureen
+     * tai kirjoittaa vanhan tiedoston perään jos se on jo luotu
+     *
+     *      * @param fileName Tiedoston nimi
+     */
     public FileDao(String fileName) {
 
         this.fileName = fileName;
@@ -34,13 +40,13 @@ public class FileDao implements Dao {
 
         } catch (Exception e) {
             try {
-                FileWriter fileMaker = new FileWriter(new File("games.txt"));
+                FileWriter fileMaker = new FileWriter(new File(fileName));
                 fileMaker.close();
 
                 writer = new FileWriter(file, true);
 
             } catch (Exception ee) {
-                System.out.println("failing to create games.txt");
+                System.out.println("failing to create games.txt " + ee.getMessage());
             }
         }
 
