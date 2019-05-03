@@ -1,4 +1,4 @@
 /**
- * Videopeli-olio ja sen vertailu
+ * VideoGame-olio ja sen vertailu
  */
 package videopelitietokanta.domain;

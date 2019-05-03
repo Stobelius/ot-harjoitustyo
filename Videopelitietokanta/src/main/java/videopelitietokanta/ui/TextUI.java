@@ -14,19 +14,28 @@ import videopelitietokanta.domain.VideoGame;
 
 /**
  * Teksitikäyttöliittymä, joka käyttää fileDao-luokkaa tietojen lukemiseen ja
- * tallentamiseen
+ * tallentamiseen.
+ *
  */
 public class TextUI {
 
     private Scanner reader;
     private FileDao fileDao;
 
+    /**
+     * Antaa FileDaolle tiedoston nimen, johon pelit tallennetaan.
+     *
+     * @param fileName tiedoston nimi, johon pelit tallennetaan.
+     */
     public TextUI(String fileName) {
         this.reader = new Scanner(System.in);
         this.fileDao = new FileDao(fileName);
 
     }
 
+    /**
+     * Käyttöliittymän käynnistys
+     */
     public void start() {
 
         OUTER_1:

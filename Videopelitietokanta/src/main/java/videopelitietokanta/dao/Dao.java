@@ -1,5 +1,6 @@
 package videopelitietokanta.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import videopelitietokanta.domain.VideoGame;
 
@@ -13,6 +14,8 @@ public interface Dao {
 
     boolean remove(String name);
 
+    boolean complete(String name);
+
     boolean contains(VideoGame game);
 
     List<VideoGame> alphabeticList();
@@ -22,6 +25,10 @@ public interface Dao {
     List<VideoGame> consoleList();
 
     List<VideoGame> list();
+
+    public HashMap<String, int[]> statistics();
+
+    void deleteAll();
 
 //    
 }

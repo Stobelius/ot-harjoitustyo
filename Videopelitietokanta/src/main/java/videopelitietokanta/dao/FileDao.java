@@ -25,8 +25,8 @@ public class FileDao implements Dao {
     private FileWriter writer;
 
     /**
-     * Konstruktori luo parametrina annetun nimisen tiedoston ohjelman juureen
-     * tai kirjoittaa vanhan tiedoston perään jos se on jo luotu
+     * Konstruktori luo tiedoston ohjelman juureen tai kirjoittaa vanhan
+     * tiedoston perään jos se on jo luotu
      *
      * @param fileName Tiedoston nimi
      */
@@ -55,8 +55,8 @@ public class FileDao implements Dao {
      * Lisää videopelin tiedostoon.
      *
      * @param game Käyttäjän tiedoista muodostettu peli
-     * @return Palauttaa true, jos pelin lisääminen onnistui. Palauttaa false,
-     * jos samanniminen peli on jo tiedostossa.
+     * @return true, jos pelin lisääminen onnistui. false,
+     * jos ei onnistunut, eli samanniminen peli on jo tiedostossa.
      */
     @Override
     public boolean add(VideoGame game) {
@@ -130,11 +130,10 @@ public class FileDao implements Dao {
     /**
      * Poistaa pelin, jonka nimenä on annettu argumentti
      *
-     *
      * @param name Pelin nimi
      *
-     * @return Paluttaa true, argumentin niminen peli löydettiin tiedostosta ja
-     * poistettiin. Palauttaa false, jos peliä ei löydetty.
+     * @return true, argumentin niminen peli löydettiin tiedostosta ja
+     * poistettiin. false, jos peliä ei löydetty.
      */
     @Override
     public boolean remove(String name) {
@@ -158,6 +157,7 @@ public class FileDao implements Dao {
      * Poistaa kaikki pelit tiedostosta
      *
      */
+    @Override
     public void deleteAll() {
 
         try {
@@ -235,6 +235,14 @@ public class FileDao implements Dao {
         return gameList;
     }
 
+    /**
+     * Luo konsoleita koskevat tilastot
+     *
+     * @return Avaimena on konsolin nimi ja arvona on sen taulukko. Taulukon
+     * paikassa 0 on pelattujen pelien lkm konsolille ja paikassa 1 kaikkien
+     * pelien lkm konsolille.
+     */
+    @Override
     public HashMap<String, int[]> statistics() {
         List<VideoGame> gameList = this.list();
         HashMap<String, int[]> consoleMap = new HashMap<>();
@@ -257,28 +265,5 @@ public class FileDao implements Dao {
         }
         return consoleMap;
     }
-
-//    /**
-//     * Palauttaa listan, jossa on käyttäjälle sievästi muotoiltuja tilastoja
-//     * konsoleista. Tilastot on muutettu merkkijonoiksi valmiina tulostusta
-//     * varten
-//     *
-//     * @return Palauttaa tilastot merkkijonoina
-//     */
-//    public List<String> statisticsAsText() {
-//        List<String> statisticsList = new ArrayList<>();
-//        for (String console : this.statistics().keySet()) {
-//            int amount = this.statistics().get(console)[1];
-//            int completedAmount = this.statistics().get(console)[0];
-//            double precent = completedAmount * 1.0 / amount;
-//            DecimalFormat df = new DecimalFormat("##%");
-//
-//            String stat = console + " yhteensä " + amount + " läpivedetty "
-//                    + completedAmount + " läpivetoprosentti " + df.format(precent);
-//            statisticsList.add(stat);
-//        }
-//
-//        return statisticsList;
-//    }
 
 }

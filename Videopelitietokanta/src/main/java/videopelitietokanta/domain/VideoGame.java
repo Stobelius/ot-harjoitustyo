@@ -19,11 +19,20 @@ public class VideoGame {
         this.publicationYear = publicationYear;
         this.completed = false;
     }
+    
+    /**
+     * Muuntaa pelin merkkijonoksi tiedostoon tallentamista varten
+     * @return peli merkkijonona tiedostoon tallentamista varten
+     */
 
     public String asFileString() {
         return name + ";" + console + ";" + publicationYear + ";" + completed;
 
     }
+    /**
+     * Käyttäjälle ystävällinen tulostus
+     * @return sievässä muodossa oleva tulostus
+     */
 
     @Override
     public String toString() {
