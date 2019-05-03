@@ -10,7 +10,7 @@ public class MainApplication {
 
     public static void main(String[] args) {
 
-        TextUI textUI = new TextUI();
+        TextUI textUI = new TextUI("games");
         textUI.start();
     }
 

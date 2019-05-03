@@ -6,7 +6,6 @@ import videopelitietokanta.domain.AlphabeticGameComparator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +28,7 @@ public class FileDao implements Dao {
      * Konstruktori luo parametrina annetun nimisen tiedoston ohjelman juureen
      * tai kirjoittaa vanhan tiedoston perään jos se on jo luotu
      *
-     *      * @param fileName Tiedoston nimi
+     * @param fileName Tiedoston nimi
      */
     public FileDao(String fileName) {
 
@@ -236,7 +235,7 @@ public class FileDao implements Dao {
         return gameList;
     }
 
-    private HashMap<String, int[]> statistics() {
+    public HashMap<String, int[]> statistics() {
         List<VideoGame> gameList = this.list();
         HashMap<String, int[]> consoleMap = new HashMap<>();
         for (VideoGame vg : gameList) {
@@ -259,27 +258,27 @@ public class FileDao implements Dao {
         return consoleMap;
     }
 
-    /**
-     * Palauttaa listan, jossa on käyttäjälle sievästi muotoiltuja tilastoja
-     * konsoleista. Tilastot on muutettu merkkijonoiksi valmiina tulostusta
-     * varten
-     *
-     * @return Palauttaa tilastot merkkijonoina
-     */
-    public List<String> statisticsAsText() {
-        List<String> statisticsList = new ArrayList<>();
-        for (String console : this.statistics().keySet()) {
-            int amount = this.statistics().get(console)[1];
-            int completedAmount = this.statistics().get(console)[0];
-            double precent = completedAmount * 1.0 / amount;
-            DecimalFormat df = new DecimalFormat("##%");
-
-            String stat = console + " yhteensä " + amount + " läpivedetty "
-                    + completedAmount + " läpivetoprosentti " + df.format(precent);
-            statisticsList.add(stat);
-        }
-
-        return statisticsList;
-    }
+//    /**
+//     * Palauttaa listan, jossa on käyttäjälle sievästi muotoiltuja tilastoja
+//     * konsoleista. Tilastot on muutettu merkkijonoiksi valmiina tulostusta
+//     * varten
+//     *
+//     * @return Palauttaa tilastot merkkijonoina
+//     */
+//    public List<String> statisticsAsText() {
+//        List<String> statisticsList = new ArrayList<>();
+//        for (String console : this.statistics().keySet()) {
+//            int amount = this.statistics().get(console)[1];
+//            int completedAmount = this.statistics().get(console)[0];
+//            double precent = completedAmount * 1.0 / amount;
+//            DecimalFormat df = new DecimalFormat("##%");
+//
+//            String stat = console + " yhteensä " + amount + " läpivedetty "
+//                    + completedAmount + " läpivetoprosentti " + df.format(precent);
+//            statisticsList.add(stat);
+//        }
+//
+//        return statisticsList;
+//    }
 
 }

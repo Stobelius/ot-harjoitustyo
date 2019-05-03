@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,6 +19,7 @@ import videopelitietokanta.domain.AlphabeticGameComparator;
 import videopelitietokanta.domain.ConsoleGameComparator;
 import videopelitietokanta.domain.VideoGame;
 import videopelitietokanta.domain.YearGameComparator;
+import videopelitietokanta.ui.TextUI;
 
 /**
  *
@@ -27,8 +29,10 @@ public class VideoGamesTest {
 
     FileDao testFileDao;
     VideoGame testGame;
+    VideoGame otherTestGame;
     String testFileName;
     File testFile;
+    TextUI testTextUI;
 
     public VideoGamesTest() {
     }
@@ -47,6 +51,8 @@ public class VideoGamesTest {
         testFile = new File(testFileName);
         testFileDao = new FileDao(testFileName);
         testGame = new VideoGame("testgame", "testconsole", -1);
+        otherTestGame = new VideoGame("testgame2", "testconsole", -1);
+        testTextUI = new TextUI(testFileName);
 
     }
 
@@ -68,9 +74,7 @@ public class VideoGamesTest {
                 if (written.equals(testGame.asFileString())) {
                     break;
                 }
-
             }
-
         } catch (Exception e) {
             System.out.println("Not managing to read file in test" + e.getMessage());
         }
@@ -101,11 +105,19 @@ public class VideoGamesTest {
     public void alphabeticCompare() {
         VideoGame game1 = new VideoGame("aa", "", -1);
         VideoGame game2 = new VideoGame("bb", "", -1);
-
         AlphabeticGameComparator alpha = new AlphabeticGameComparator();
         boolean comparison = (alpha.compare(game1, game2) < 0);
         assertEquals(comparison, true);
 
+    }
+
+    @Test
+    public void alphabeticListOrdered() {
+        VideoGame game1 = new VideoGame("aa", "", -1);
+        VideoGame game2 = new VideoGame("bb", "", -1);
+        testFileDao.add(game1);
+        testFileDao.add(game2);
+        assertEquals(game1, testFileDao.alphabeticList().get(0));
     }
 
     @Test
@@ -120,6 +132,16 @@ public class VideoGamesTest {
     }
 
     @Test
+    public void yearListOrdered() {
+        VideoGame game1 = new VideoGame("aa", "", 2);
+        VideoGame game2 = new VideoGame("bb", "", 1);
+
+        testFileDao.add(game1);
+        testFileDao.add(game2);
+        assertEquals(game2, testFileDao.yearList().get(0));
+    }
+
+    @Test
     public void ConsoleCompare() {
         VideoGame game1 = new VideoGame("aa", "cc", 2);
         VideoGame game2 = new VideoGame("bb", "dd", 1);
@@ -131,31 +153,58 @@ public class VideoGamesTest {
     }
 
     @Test
-    public void statisticsAsTextOneGameOneConsole() {
-        testFileDao.add(testGame);
-        boolean contains = testFileDao.statisticsAsText().contains(testGame.getConsole() + " yhteensä " + 1 + " läpivedetty " + 0
-                + " läpivetoprosentti " + 0 + "%");
-
-        assertEquals(contains, true);
-
+    public void ConsoleListOrdered() {
+        VideoGame game1 = new VideoGame("aa", "cc", 2);
+        VideoGame game2 = new VideoGame("bb", "dd", 1);
+        testFileDao.add(game1);
+        testFileDao.add(game2);
+        assertEquals(game1, testFileDao.consoleList().get(0));
     }
 
     @Test
-    public void statisticsAsTextTwoGameOneConsole() {
+    public void statisticsContainOneConsole() {
         testFileDao.add(testGame);
-        testFileDao.add(new VideoGame("mario", "testconsole", -2));
-        testFileDao.complete(testGame.getName());
-        boolean contains = testFileDao.statisticsAsText().contains(testGame.getConsole() + " yhteensä " + 2 + " läpivedetty " + 1
-                + " läpivetoprosentti " + 50 + "%");
-
+        boolean contains = testFileDao.statistics().keySet().contains(testGame.getConsole());
         assertEquals(contains, true);
+    }
 
+    @Test
+    public void statisticsTwoGamesOneConsole() {
+        testFileDao.add(testGame);
+        testFileDao.complete(testGame.getName());
+        testFileDao.add(otherTestGame);
+        int[] pair = {1, 2};
+        Assert.assertArrayEquals(pair, testFileDao.statistics().get(testGame.getConsole()));
     }
 
     @Test
     public void videoGameToString() {
         assertEquals(testGame.toString(), testGame.getName() + ",  " + testGame.getConsole() + ",  " + testGame.getPublicationYear() + ",  ei pelattu läpi");
 
+    }
+
+    @Test
+    public void completeExistingGame() {
+        testFileDao.add(testGame);
+        assertEquals(true, testFileDao.complete(testGame.getName()));
+    }
+
+    @Test
+    public void completeNotExistingGame() {
+        assertEquals(false, testFileDao.complete("not a game"));
+    }
+
+    @Test
+    public void completeChangesComplition() {
+        testFileDao.add(testGame);
+        testFileDao.complete(testGame.getName());
+        testGame = testFileDao.list().get(0);
+        assertEquals(true, testGame.isCompleted());
+    }
+
+    @Test
+    public void removingNotExistingGame() {
+        assertEquals(false, testFileDao.remove("not a game"));
     }
 
 }

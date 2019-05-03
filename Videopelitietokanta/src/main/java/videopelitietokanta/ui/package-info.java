@@ -1,0 +1,4 @@
+/**
+ * Tekstikäyttöliittymä
+ */
+package videopelitietokanta.ui;

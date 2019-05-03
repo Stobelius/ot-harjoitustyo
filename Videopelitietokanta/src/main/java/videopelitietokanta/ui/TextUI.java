@@ -5,6 +5,8 @@
  */
 package videopelitietokanta.ui;
 
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import videopelitietokanta.dao.FileDao;
 import java.util.Scanner;
@@ -19,9 +21,9 @@ public class TextUI {
     private Scanner reader;
     private FileDao fileDao;
 
-    public TextUI() {
+    public TextUI(String fileName) {
         this.reader = new Scanner(System.in);
-        this.fileDao = new FileDao("games.txt");
+        this.fileDao = new FileDao(fileName);
 
     }
 
@@ -165,13 +167,30 @@ public class TextUI {
 
     }
 
-    private void printStatistics() {
+    private List<String> statisticsAsText() {
         System.out.println("tulostetaan tilastoja");
-        for (String s : fileDao.statisticsAsText()) {
+
+        List<String> statisticsList = new ArrayList<>();
+        for (String console : fileDao.statistics().keySet()) {
+            int amount = fileDao.statistics().get(console)[1];
+            int completedAmount = fileDao.statistics().get(console)[0];
+            double precent = completedAmount * 1.0 / amount;
+            DecimalFormat df = new DecimalFormat("##%");
+
+            String stat = console + " yhteensä " + amount + " läpivedetty "
+                    + completedAmount + " läpivetoprosentti " + df.format(precent);
+            statisticsList.add(stat);
+        }
+
+        return statisticsList;
+
+    }
+
+    private void printStatistics() {
+        for (String s : this.statisticsAsText()) {
             System.out.println(s);
         }
         System.out.println("");
-
     }
 
 }
