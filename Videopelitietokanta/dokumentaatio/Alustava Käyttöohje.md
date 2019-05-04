@@ -14,7 +14,7 @@ Käydään seuraavaksi kaikki komennot läpi.
 ### 1 Pelin lisääminen
 Valitsemalla 1, voit lisätä uuden pelin. Tällöin ohjelma kysyy pelin nimeä, konsolia ja vuosilukua, jolloin se on tehty. Huomaa, että pelin nimi tai konsoli eivät saa sisältää puolipisteitä, ja vuosiluvun pitää olla kokonaisluku.
 
-kuva pelin lisäämisestä
+    1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta
 
 Saman nimistä peliä ei voi lisätä moneen kertaan.
 
