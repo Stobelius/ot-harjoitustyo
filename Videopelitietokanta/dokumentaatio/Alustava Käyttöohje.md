@@ -9,13 +9,13 @@ Sovellus käynnistyy perusnäkymään, jolloin näet eri mahdolliset komennot:
 
         1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta
 
-Käydään seuraavaksi kaikki komennot läpi. Käyttäjän syötteet on **boldattu**.
+Käydään seuraavaksi kaikki komennot läpi.
 
 ### 1 Pelin lisääminen
 Valitsemalla 1, voit lisätä uuden pelin. Tällöin ohjelma kysyy pelin nimeä, konsolia ja vuosilukua, jolloin se on tehty. Huomaa, että pelin nimi tai konsoli eivät saa sisältää puolipisteitä, ja vuosiluvun pitää olla kokonaisluku.
 
         1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta
-        **1**
+        1
         nyt syötetään peli
         Anna nimi:
         The Legend Of Zelda
