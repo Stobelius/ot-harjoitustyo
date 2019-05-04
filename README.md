@@ -9,9 +9,9 @@ Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetä�
 
 [Työaikakirjanpito](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/tyoaikakirjanpito.md)
 
-[Alustava arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/arkkitehtuuri.md)
 
-[Alustava käyttöohje](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+[Käyttöohje](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
 
 [Testausdokumentti](https://github.com/Stobelius/ot-harjoitustyo/blob/master/Videopelitietokanta/dokumentaatio/Testausdokumentti.md)
 
