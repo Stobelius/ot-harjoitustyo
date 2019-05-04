@@ -19,7 +19,7 @@ Super Mario Bros./Duck Hunt;nes;1987;true
 Metroid;nes;1988;false
 </pre>
 
-Pelit eivät saa sisältää puolipisteitä. Lisäksi kaksi peliä samaistetaan, jos niillä on sama nimi. Toisin sanoen samannimisiä pelejä ei voi tallentaa tietokantaan useita.
+Pelit eivät saa sisältää puolipisteitä. Lisäksi kaksi peliä samaistetaan, jos niillä on sama nimi. (Nimet muutetaan pieniksi kirjaimiksi ja verataan sitten merkkijonoina). Toisin sanoen samannimisiä pelejä ei voi tallentaa tietokantaan useita.
 
 Toisaalta FileDao:n voisi korvata tietokantaan perustuvalla tallennusjärjestelyllä. Tällöin pitäisi luoda uusi luokka esim SQLDao, joka totetuttaisi Dao rajapinnan.
 
