@@ -72,7 +72,6 @@ public class TextUI {
     }
 
     private void inputGame() {
-        System.out.println("nyt syötetään peli");
         System.out.println("Anna nimi:");
         String name = reader.nextLine();
         if (name.contains(";")) {
@@ -99,7 +98,9 @@ public class TextUI {
         VideoGame game = new VideoGame(name, gameConsole, year);
         boolean added = fileDao.add(game);
         if (!added) {
-            System.out.println("peli on jo lisätty");
+            System.out.println("peli on jo lisätty aiemmin");
+        } else {
+            System.out.println("peli syötetty");
         }
         System.out.println("");
 
@@ -138,7 +139,7 @@ public class TextUI {
     }
 
     private void removeGame() {
-        System.out.println("Anna nimi:");
+        System.out.println("Minkä niminen peli poistetaan?");
         String name = reader.nextLine();
         boolean removed = fileDao.remove(name);
         if (removed) {
@@ -164,7 +165,7 @@ public class TextUI {
     }
 
     private void completeGame() {
-        System.out.println("Mikä peli on pelattu läpi");
+        System.out.println("Minkä niminen peli on pelattu läpi?");
         String gameName = reader.nextLine();
         boolean completed = fileDao.complete(gameName);
         if (completed) {
@@ -177,7 +178,6 @@ public class TextUI {
     }
 
     private List<String> statisticsAsText() {
-        System.out.println("tulostetaan tilastoja");
 
         List<String> statisticsList = new ArrayList<>();
         for (String console : fileDao.statistics().keySet()) {
