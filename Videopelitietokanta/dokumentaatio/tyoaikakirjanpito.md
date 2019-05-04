@@ -17,4 +17,6 @@
 | yht   | 39   |  |
 | 1.5   | 4    | Refactorointia, pieniä parannuksia |
 | 2.5   | 2    | Todo lopullista palautusta varten ja testejä |
+| 3.5   | 4    | Testejä refactorointia javadoccia|
+
 
