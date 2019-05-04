@@ -10,7 +10,7 @@ Pakkausrakenne on kuvattu alla. AlphabeticComparator luokan lisäksi domain pakk
 
 ## Tietojen pysyväisväistallennus
 
-Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa olevaan ennalta määrättyyn games.txt tiedostoon. Ennalta määrätyn tekstitiedoston muuttaminen kovakoodatusta käyttäjän määriteltäväksi olisi helpohkoa toteuttaa tämänhetkiseen FileDao-luokkaan.
+Dao rajapinnan toteuttava FileDao luokka hoitaa tietojen tallennuksen juuressa olevaan mainApplicationissa ennalta määrättyyn games tiedostoon. Ennalta määrätyn tekstitiedoston muuttaminen kovakoodatusta käyttäjän määriteltäväksi olisi helpohkoa toteuttaa tämänhetkiseen FileDao-luokkaan.
 
 Pelit tallennetaan tiedostoon alla olevassa muodossa. Viimeisenä oleva boolean merkitsee, onko peli pelattu läpi.
 
