@@ -39,7 +39,7 @@ Saman nimistä peliä ei voi lisätä moneen kertaan. Jos nyt yritetään uudest
         peli on jo lisätty
 
 ### 2 Pelien tulostaminen
-Valitsemalla 2 voit tulostaa kaikki pelit. Ohjelma kysyy ensin, että haluatko ryhmitellä tulostuksen aakkosittain (1), konsoleittain (2), vai vuosittain(3). 
+Valitsemalla 2 voit tulostaa kaikki pelit. Ohjelma kysyy ensin, että haluatko ryhmitellä tulostuksen aakkosittain 1, konsoleittain 2, vai vuosittain3. 
 
         1 syötä peli, 2 tulosta pelejä, 3 poista peli, 4 pelaa peli läpi, 5 tilastoja, 6 poista kaikki, q lopeta
         2
