@@ -2,7 +2,7 @@
 
 Pakkausrakenne on suurpiirteisesti kuvattu alla. Näiden luokkien lisäksi domain pakkaus sisältää kolme yksinkertaista Comparator luokkaa, joita käytetään FileDao käyttää videopelien järjestämiseen. 
 
-![](OTarkkitehtuuri.png)
+![](OTarkkitehtuuri uusi)
 
 ## Sekvenssikaavio tulostuksesta
 
