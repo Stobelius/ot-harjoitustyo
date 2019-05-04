@@ -15,7 +15,7 @@ public class VideoGame {
 
     public VideoGame(String name, String console, int publicationYear) {
         this.name = name;
-        this.console = console;
+        this.console = console.trim().toLowerCase();
         this.publicationYear = publicationYear;
         this.completed = false;
     }
@@ -76,7 +76,7 @@ public class VideoGame {
             return false;
         }
         final VideoGame other = (VideoGame) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.name.trim().toLowerCase(), other.name.trim().toLowerCase())) {
             return false;
         }
         return true;
@@ -85,7 +85,7 @@ public class VideoGame {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.name.trim().toLowerCase());
         return hash;
     }
 

@@ -78,8 +78,9 @@ public class FileDao implements Dao {
     }
 
     private VideoGame getGameByName(String name) {
+        VideoGame game=new VideoGame(name,"",0);
         for (VideoGame vg : this.list()) {
-            if (vg.getName().equals(name)) {
+            if (vg.equals(game)) {
                 return vg;
             }
         }
