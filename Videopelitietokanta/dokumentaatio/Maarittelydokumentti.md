@@ -1,4 +1,4 @@
- # Alustava määrittelydokumentti
+ # Määrittelydokumentti
  
 Toteutettava ohjelma on videopelikokoelman järjestelytietokanta. Siihen käyttäjä voi lisätä videopelejä, joista tallennetaan nimi, ilmestymisvuosi ja pelikonsoli. Lisäksi pidetään kirjaa siitä, onko käyttäjä pelannut kyseisen pelin läpi.
 
