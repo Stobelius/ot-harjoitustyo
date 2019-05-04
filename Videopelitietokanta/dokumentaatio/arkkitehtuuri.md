@@ -27,5 +27,5 @@ Toisaalta FileDao:n voisi korvata tietokantaan perustuvalla tallennusjärjestely
 
 ## Käyttöliittymä
 
-Mainapplication ei tee muuta, kuin käynnistää TextUi:n käyttöliittymän. Koodiltaan sekava tekstikäyttöliittymä voitaisiin korvata graafisella käyttöliittymällä.
+Mainapplication ei tee muuta, kuin käynnistää TextUi:n käyttöliittymän. Tekstikäyttöliittymä voitaisiin korvata graafisella käyttöliittymällä.
 
