@@ -1,3 +1,5 @@
+# Arkkitehtuuri
+
 ## Pakkausrakenne:
 
 Pakkausrakenne on kuvattu alla. AlphabeticComparator luokan lisäksi domain pakkaus sisältää kaksi muuta yksinkertaista Comparator luokkaa, joita FileDao käyttää videopelien järjestämiseen. 
