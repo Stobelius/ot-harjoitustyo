@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FileDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Videopelitietokanta</a> &gt; <a href="index.source.html" class="el_package">videopelitietokanta.dao</a> &gt; <span class="el_source">FileDao.java</span></div><h1>FileDao.java</h1><pre class="source lang-java linenums">package videopelitietokanta.dao;
+
+import videopelitietokanta.domain.YearGameComparator;
+import videopelitietokanta.domain.ConsoleGameComparator;
+import videopelitietokanta.domain.AlphabeticGameComparator;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import videopelitietokanta.domain.VideoGame;
+
+/**
+ * Luokka kirjoittaa videopelejä tiedostoon, sekä lukee sieltä listoja ja
+ * järjestää niitä.
+ */
+public class FileDao implements Dao {
+
+    private File file;
+    private String fileName;
+    private FileWriter writer;
+
+    /**
+     * Konstruktori luo tiedoston ohjelman juureen tai kirjoittaa vanhan
+     * tiedoston perään jos se on jo luotu
+     *
+     * @param fileName Tiedoston nimi
+     */
+<span class="fc" id="L33">    public FileDao(String fileName) {</span>
+
+<span class="fc" id="L35">        this.fileName = fileName;</span>
+<span class="fc" id="L36">        this.file = new File(fileName);</span>
+        try {
+<span class="fc" id="L38">            writer = new FileWriter(file, true);</span>
+
+<span class="nc" id="L40">        } catch (Exception e) {</span>
+            try {
+<span class="nc" id="L42">                FileWriter fileMaker = new FileWriter(new File(fileName));</span>
+<span class="nc" id="L43">                fileMaker.close();</span>
+
+<span class="nc" id="L45">                writer = new FileWriter(file, true);</span>
+
+<span class="nc" id="L47">            } catch (Exception ee) {</span>
+<span class="nc" id="L48">                System.out.println(&quot;failing to create games.txt &quot; + ee.getMessage());</span>
+<span class="nc" id="L49">            }</span>
+<span class="fc" id="L50">        }</span>
+
+<span class="fc" id="L52">    }</span>
+
+    /**
+     * Lisää videopelin tiedostoon.
+     *
+     * @param game Käyttäjän tiedoista muodostettu peli
+     * @return true, jos pelin lisääminen onnistui. false, jos ei onnistunut,
+     * eli samanniminen peli on jo tiedostossa.
+     */
+    @Override
+    public boolean add(VideoGame game) {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (this.contains(game)) {</span>
+<span class="fc" id="L64">            return false;</span>
+        }
+
+        try {
+
+<span class="fc" id="L69">            writer.write(game.asFileString() + &quot;\r\n&quot;);</span>
+<span class="fc" id="L70">            writer.flush();</span>
+<span class="fc" id="L71">            return true;</span>
+
+<span class="nc" id="L73">        } catch (Exception e) {</span>
+<span class="nc" id="L74">            System.out.println(&quot;not managing to write to file &quot; + e.getMessage());</span>
+        }
+<span class="nc" id="L76">        return false;</span>
+
+    }
+
+    private VideoGame getGameByName(String name) {
+<span class="fc" id="L81">        VideoGame game = new VideoGame(name, &quot;&quot;, 0);</span>
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        for (VideoGame vg : this.list()) {</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">            if (vg.equals(game)) {</span>
+<span class="fc" id="L84">                return vg;</span>
+            }
+<span class="nc" id="L86">        }</span>
+
+<span class="nc" id="L88">        return null;</span>
+    }
+
+    /**
+     * Merkitsee, että annettu peli on pelattu läpi.
+     *
+     *
+     * @param name Pelin nimi
+     *
+     * @return Paluttaa true, argumentin niminen peli löydettiin tiedostosta ja
+     * muutettiin läpipelatuksi. Palauttaa false, jos peliä ei löydetty.
+     */
+    public boolean complete(String name) {
+<span class="fc" id="L101">        VideoGame testGame = new VideoGame(name, &quot;&quot;, 0);</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        if (!this.contains(testGame)) {</span>
+<span class="fc" id="L103">            return false;</span>
+        }
+
+<span class="fc" id="L106">        VideoGame game = this.getGameByName(name);</span>
+
+<span class="fc" id="L108">        game.setCompleted(true);</span>
+
+<span class="fc" id="L110">        this.remove(name);</span>
+<span class="fc" id="L111">        this.add(game);</span>
+
+<span class="fc" id="L113">        return true;</span>
+    }
+
+    /**
+     * Kertoo, onko kyseinen peli jo tiedostossa.
+     *
+     * @param game Pelin nimi
+     * @return Löytyykö peli
+     */
+    public boolean contains(VideoGame game) {
+
+<span class="fc bfc" id="L124" title="All 2 branches covered.">        if (this.list().contains(game)) {</span>
+<span class="fc" id="L125">            return true;</span>
+        }
+
+<span class="fc" id="L128">        return false;</span>
+    }
+
+    /**
+     * Poistaa pelin, jonka nimenä on annettu argumentti
+     *
+     * @param name Pelin nimi
+     *
+     * @return true, argumentin niminen peli löydettiin tiedostosta ja
+     * poistettiin. false, jos peliä ei löydetty.
+     */
+    @Override
+    public boolean remove(String name) {
+<span class="fc" id="L141">        VideoGame game = new VideoGame(name, &quot;&quot;, 0);</span>
+
+<span class="fc bfc" id="L143" title="All 2 branches covered.">        if (!this.contains(game)) {</span>
+<span class="fc" id="L144">            return false;</span>
+        }
+<span class="fc" id="L146">        List&lt;VideoGame&gt; gameList = this.list();</span>
+<span class="fc" id="L147">        gameList.remove(game);</span>
+<span class="fc" id="L148">        this.deleteAll();</span>
+
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">        for (VideoGame vg : gameList) {</span>
+<span class="nc" id="L151">            this.add(vg);</span>
+<span class="nc" id="L152">        }</span>
+
+<span class="fc" id="L154">        return true;</span>
+    }
+
+    /**
+     * Poistaa kaikki pelit tiedostosta
+     *
+     */
+    @Override
+    public void deleteAll() {
+
+        try {
+<span class="fc" id="L165">            FileWriter fileMaker = new FileWriter(file);</span>
+<span class="fc" id="L166">            fileMaker.write(&quot;&quot;);</span>
+<span class="fc" id="L167">            fileMaker.close();</span>
+<span class="nc" id="L168">        } catch (Exception e) {</span>
+<span class="nc" id="L169">            System.out.println(e.getMessage());</span>
+<span class="fc" id="L170">        }</span>
+<span class="fc" id="L171">    }</span>
+
+    /**
+     * Palauttaa kaikki pelit listana
+     *
+     * @return Palauttaa kaikki pelit listana satunnaisessa järjestyksessä
+     */
+    @Override
+    public List&lt;VideoGame&gt; list() {
+
+<span class="fc" id="L181">        ArrayList&lt;VideoGame&gt; currentList = new ArrayList&lt;&gt;();</span>
+        Scanner reader;
+        try {
+<span class="fc" id="L184">            reader = new Scanner(file);</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">            while (reader.hasNextLine()) {</span>
+<span class="fc" id="L186">                String s = reader.nextLine();</span>
+<span class="fc" id="L187">                String[] parts = s.split(&quot;;&quot;);</span>
+<span class="fc" id="L188">                VideoGame game = new VideoGame(parts[0], parts[1], Integer.parseInt(parts[2]));</span>
+<span class="fc bfc" id="L189" title="All 2 branches covered.">                if (Boolean.parseBoolean(parts[3])) {</span>
+<span class="fc" id="L190">                    game.setCompleted(true);</span>
+                }
+<span class="fc" id="L192">                currentList.add(game);</span>
+<span class="fc" id="L193">            }</span>
+<span class="nc" id="L194">        } catch (FileNotFoundException ex) {</span>
+<span class="nc" id="L195">            Logger.getLogger(FileDao.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="fc" id="L196">        }</span>
+<span class="fc" id="L197">        return currentList;</span>
+    }
+
+    /**
+     * Palauttaa kaikki pelit aakkosittain järjestettynä
+     *
+     * @return Palauttaa kaikki pelit aakkosjärjestyksessä nimen mukaan
+     */
+    @Override
+    public List&lt;VideoGame&gt; alphabeticList() {
+<span class="fc" id="L207">        List&lt;VideoGame&gt; gameList = this.list();</span>
+<span class="fc" id="L208">        AlphabeticGameComparator alpha = new AlphabeticGameComparator();</span>
+<span class="fc" id="L209">        gameList.sort(alpha);</span>
+<span class="fc" id="L210">        return gameList;</span>
+    }
+
+    /**
+     * Palauttaa kaikki pelit iän mukaan järjestettynä
+     *
+     * @return Palauttaa kaikki pelit ikäjärjestyksessä
+     */
+    @Override
+    public List&lt;VideoGame&gt; yearList() {
+<span class="fc" id="L220">        List&lt;VideoGame&gt; gameList = this.list();</span>
+<span class="fc" id="L221">        YearGameComparator alpha = new YearGameComparator();</span>
+<span class="fc" id="L222">        gameList.sort(alpha);</span>
+<span class="fc" id="L223">        return gameList;</span>
+    }
+
+    /**
+     * Palauttaa kaikki pelit konsoleittain järjestettynä
+     *
+     * @return Palauttaa kaikki pelit järjestettynä konsoleittain
+     */
+    @Override
+    public List&lt;VideoGame&gt; consoleList() {
+<span class="fc" id="L233">        List&lt;VideoGame&gt; gameList = this.list();</span>
+<span class="fc" id="L234">        ConsoleGameComparator alpha = new ConsoleGameComparator();</span>
+<span class="fc" id="L235">        gameList.sort(alpha);</span>
+<span class="fc" id="L236">        return gameList;</span>
+    }
+
+    /**
+     * Luo konsoleita koskevat tilastot
+     *
+     * @return Avaimena on konsolin nimi ja arvona on sen taulukko. Taulukon
+     * paikassa 0 on pelattujen pelien lkm konsolille ja paikassa 1 kaikkien
+     * pelien lkm konsolille.
+     */
+    @Override
+    public HashMap&lt;String, int[]&gt; statistics() {
+<span class="fc" id="L248">        List&lt;VideoGame&gt; gameList = this.list();</span>
+<span class="fc" id="L249">        HashMap&lt;String, int[]&gt; consoleMap = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L250" title="All 2 branches covered.">        for (VideoGame vg : gameList) {</span>
+<span class="fc bfc" id="L251" title="All 2 branches covered.">            if (!consoleMap.containsKey(vg.getConsole())) {</span>
+<span class="fc" id="L252">                int[] pair = new int[2];</span>
+<span class="fc bfc" id="L253" title="All 2 branches covered.">                if (vg.isCompleted()) {</span>
+<span class="fc" id="L254">                    pair[0] = 1;</span>
+                }
+<span class="fc" id="L256">                pair[1] = 1;</span>
+<span class="fc" id="L257">                consoleMap.put(vg.getConsole(), pair);</span>
+<span class="fc" id="L258">            } else {</span>
+<span class="fc" id="L259">                int[] pair = consoleMap.get(vg.getConsole());</span>
+<span class="pc bpc" id="L260" title="1 of 2 branches missed.">                if (vg.isCompleted()) {</span>
+<span class="nc" id="L261">                    pair[0]++;</span>
+                }
+<span class="fc" id="L263">                pair[1]++;</span>
+<span class="fc" id="L264">                consoleMap.put(vg.getConsole(), pair);</span>
+            }
+<span class="fc" id="L266">        }</span>
+<span class="fc" id="L267">        return consoleMap;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

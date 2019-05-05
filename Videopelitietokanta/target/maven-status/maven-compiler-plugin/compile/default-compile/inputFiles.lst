@@ -1,0 +1,11 @@
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/package-info.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/Dao.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/MainApplication.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/package-info.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/ConsoleGameComparator.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/VideoGame.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/FileDao.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/AlphabeticGameComparator.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/package-info.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/TextUI.java
+/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/YearGameComparator.java

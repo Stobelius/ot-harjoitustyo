@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/TextUI.java">
+<error line="39" column="5" severity="error" message="Method length is 32 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="74" column="5" severity="error" message="Method length is 33 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="109" column="5" severity="error" message="Method length is 30 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/MainApplication.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/ui/package-info.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/VideoGame.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/AlphabeticGameComparator.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/YearGameComparator.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/ConsoleGameComparator.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/domain/package-info.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/Dao.java">
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/FileDao.java">
+<error line="246" column="5" severity="error" message="Method length is 22 lines (max allowed is 20)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+</file>
+<file name="/home/stobe/tuopinkoodia/ot-harjoitustyo/Videopelitietokanta/src/main/java/videopelitietokanta/dao/package-info.java">
+</file>
+</checkstyle>
