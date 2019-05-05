@@ -17,7 +17,7 @@ Tähän sovellukseen voin tallentaa oman videopelikokoelmani. Peleistä pidetä�
 
 ## Releaset
 
-[Viikko 7](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko7) 
+[Lopullinen palautus](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko7) 
 
 [Viikko 6](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko6)
 
