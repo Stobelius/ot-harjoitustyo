@@ -13,4 +13,4 @@ Sovelluksessa yritetään saada ensin perusasiat kondikseen. Tämän jälkeen si
 - lisää atribuutteja peleistä, esim genre
 - monta käyttäjää voisivat tallentaa eri pelikokoelmiaan
 
-
+Perusasiat saatiin kondikseen, mutta laajentaminen jäi väliin. Olisi ollut mukavaa, jos oma kunnianhimo ja jaksaminen olisivat riittäneet SQL-tietokannan tekemiseen tässä.
