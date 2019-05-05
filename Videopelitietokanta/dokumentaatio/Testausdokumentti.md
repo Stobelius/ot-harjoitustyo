@@ -4,7 +4,7 @@ Ohjelmaa on testattu yksikkötestein, monia luokkia yhdistelevillä testeillä, 
 
 ### Testikattavuus
 Rivikattavuus on 80% ja haarautumakattavuus
-[](testikattavuus.png)
+![](testikattavuus.png)
 
 ### Testauksen puutteet 
 Testikattavuuden ulkopuolella olevat osat ovat paljolti tiedostojen lukemisessa liittyviä try-catchien catch osioita. Ne ovat virheilmoituksia, johon ohjelma ei päädy. Toki muitakin aukkoja testauksessa on, kattavuus ei ole täydellinen vaikka onkin korkea.
