@@ -20,6 +20,8 @@ Käyttämällä koneellani tuli jar-tiedoston suorittamisessa virhe java.lang.Un
 
 Päivitetty selitys
 
+Lopullinen versio [Viikko 7](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko7) 
+
 [Viikko 6](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko6)
 
 [Viikko 5](https://github.com/Stobelius/ot-harjoitustyo/releases/tag/viikko5)
