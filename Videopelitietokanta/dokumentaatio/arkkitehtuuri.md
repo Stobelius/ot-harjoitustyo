@@ -31,3 +31,6 @@ Toisaalta FileDao:n voisi korvata tietokantaan perustuvalla tallennusjärjestely
 
 Mainapplication ei tee muuta, kuin käynnistää TextUi:n käyttöliittymän. Tekstikäyttöliittymä voitaisiin korvata graafisella käyttöliittymällä.
 
+## Parannettavaa pakkausrakenteessa
+
+FileDao luokka hoitaa aika paljon sovelluslogiikkaa, vaikka sen pitäisi keskittyä vain tietojen tallentamiseen ja lukemiseen. Järkevämpi pakkausrakenne tulisi, jos domainiin tekisi uuden luokan, joka tekisi osan FileDaon hommista. Tämä luokka voisi esimerkiksi olla vastuussa pelien järjestämisestä ja tilastojen luonnista.
