@@ -7,7 +7,7 @@ Rivikattavuus on 80% ja haarautumakattavuus 76%.
 ![](testikattavuus.png)
 
 ### Testauksen puutteet 
-Testikattavuuden ulkopuolella olevat osat ovat paljolti tiedostojen lukemisessa liittyviä try-catchien catch osioita. Ne ovat virheilmoituksia, johon ohjelma ei päädy. Toki muitakin aukkoja testauksessa on, kattavuus ei ole täydellinen vaikka onkin korkea.
+Testikattavuuden ulkopuolella olevat osat ovat paljolti tiedostojen lukemisessa liittyviä try-catchien catch osioita. Ne ovat virheilmoituksia, johon ohjelma ei päädy. Toki muitakin aukkoja testauksessa on. Kattavuus ei ole täydellinen vaikka onkin korkeahko.
 
 ### Manuaalinen testaus
 Ohjelmaa on ajettu tilanteissa, missä tiedostot games ja testfile puuttuvat, tai ne ovat jo luotu. Kummassakin tilanteessa ohjelma toimii hyvin. Teksti käyttöliittymää ei ole testattu automaattisesti.
