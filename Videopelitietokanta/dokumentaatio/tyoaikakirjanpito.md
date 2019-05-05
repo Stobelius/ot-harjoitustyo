@@ -14,9 +14,10 @@
 | 24.4  | 4    | Peleistä tieto, onko pelattu läpi | 
 | 25.4  | 3    | Tilastot ja yksi testi |
 | 26.4  | 6    | JavaDoc, testejä, arkkitehtuurikuvaus yms |
-| yht   | 39   |  |
 | 1.5   | 4    | Refactorointia, pieniä parannuksia |
 | 2.5   | 2    | Todo lopullista palautusta varten ja testejä |
 | 3.5   | 4    | Testejä, refactorointia, javadoccia|
 | 4.5   | 5    | Käyttöohje, pieniä paranteluja, githubin siistintää |
+| 5.5   | 3    | Testausdokumentti yms dokumentointia |
+| yht   | 57   | |
 
