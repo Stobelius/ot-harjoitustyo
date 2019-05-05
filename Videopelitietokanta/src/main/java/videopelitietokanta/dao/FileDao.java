@@ -55,8 +55,8 @@ public class FileDao implements Dao {
      * Lisää videopelin tiedostoon.
      *
      * @param game Käyttäjän tiedoista muodostettu peli
-     * @return true, jos pelin lisääminen onnistui. false,
-     * jos ei onnistunut, eli samanniminen peli on jo tiedostossa.
+     * @return true, jos pelin lisääminen onnistui. false, jos ei onnistunut,
+     * eli samanniminen peli on jo tiedostossa.
      */
     @Override
     public boolean add(VideoGame game) {
@@ -78,7 +78,7 @@ public class FileDao implements Dao {
     }
 
     private VideoGame getGameByName(String name) {
-        VideoGame game=new VideoGame(name,"",0);
+        VideoGame game = new VideoGame(name, "", 0);
         for (VideoGame vg : this.list()) {
             if (vg.equals(game)) {
                 return vg;
